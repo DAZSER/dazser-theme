@@ -68,13 +68,13 @@
 }
 
 .table-inverse {
-  background-color: map-get($theme-colors, primary);
+  background-color: theme-color($key: "primary");
   & td,
   & th,
   & thead {
     border-color: $table-border-color;
   }
   .btn {
-    border: $border-width solid map-get($grays, 300);
+    border: $border-width solid gray($key: "300");
   }
 }

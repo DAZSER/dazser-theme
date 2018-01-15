@@ -17,10 +17,10 @@
     &-selected{
       color: $white;
       text-decoration: none;
-      background-color: map-get($theme-colors, primary);
+      background-color: theme-color($key: "primary");
     }
     &-disabled {
-      color: map-get($grays, 600);
+      color: gray($key: "600");
       cursor: not-allowed;
       &:hover{
         a{

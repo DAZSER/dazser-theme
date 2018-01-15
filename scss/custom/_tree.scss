@@ -1,5 +1,5 @@
 .tree {
-  color: map-get($theme-colors, primary);
+  color: theme-color($key: "primary");
   cursor: default;
   &Item {
     & + ul {
@@ -13,17 +13,17 @@
       //display: inline-block;
     }
     &Hover{
-      color: map-get($theme-colors, primary);
-      background-color: map-get($grays, 300);
+      color: theme-color($key: "primary");
+      background-color: gray($key: "300");
     }
     &Selected {
-      color: map-get($grays, 300);
-      background: map-get($theme-colors, primary);
+      color: gray($key: "300");
+      background: theme-color($key: "primary");
       .icon {
-        fill: map-get($grays, 300);
+        fill: gray($key: "300");
       }
       &:hover{
-        color: map-get($grays, 300);
+        color: gray($key: "300");
       }
     }
   }

@@ -17,7 +17,7 @@
     border-width: 0;
     &[disabled]{
       cursor: not-allowed;
-      background-color: map-get($grays, 300);
+      background-color: gray($key: "300");
     }
   }
   &-button{
@@ -57,10 +57,10 @@
   }
   &-inverse {
     .buttongroup {
-      border-color: map-get($grays, 300);
+      border-color: gray($key: "300");
       //margin-top: 0 !important;
       input {
-        color: map-get($grays, 300);
+        color: gray($key: "300");
       }
     }
   }

@@ -4,21 +4,21 @@
 .sidebar {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  background-color: map-get($grays, 200);
+  background-color: gray($key: "200");
   &-left{
-    border-right: $border-width solid map-get($grays, 300);
+    border-right: $border-width solid gray($key: "300");
   }
   &-right{
-    border-left: $border-width solid map-get($grays, 300);
+    border-left: $border-width solid gray($key: "300");
   }
 }
 
 .sidebar-header{
   @extend .navbar;
   display: inherit;
-  background-color: map-get($theme-colors, primary);
+  background-color: theme-color($key: "primary");
   box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
-  //color: map-get($theme-colors,dark);
+  //color: theme-color($key: "dark");
   a{
     color: $white;
   }
