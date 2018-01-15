@@ -1,0 +1,62 @@
+.datepicker{
+
+  text-align: center;
+  @include border-radius($input-border-radius);
+  direction: ltr;
+
+  table {
+    margin: 0;
+    user-select: none;
+  }
+
+  td,
+  th {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    @include border-radius($input-border-radius);
+  }
+
+  &-date,
+  &-weekend,
+  &-panel-item{
+    &:hover{
+      cursor: pointer;
+      background: map-get($grays, 300);
+    }
+  }
+
+  &-item,
+  &-panel-item{
+    display: block;
+    &-selected{
+      //@include button-variant(lighten(map-get($grays, 600), 10), darken(map-get($grays, 600), 10), darken(map-get($grays, 600), 20));
+      height: 100%;
+      line-height: 2rem;
+      color: $white;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      border-radius: .25rem;
+    }
+  }
+
+  &-panel-item {
+    line-height: 3rem;
+    text-align: center;
+    border: none;
+    @include border-radius($input-border-radius);
+  }
+
+  &-today {
+    @include button-variant($white, lighten($orange, 30%), $orange);
+    color: $black;
+  }
+
+  &-weeks-of-year {
+    width: 12px;
+    padding: 0 2px 0 5px;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+
+}

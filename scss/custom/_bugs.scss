@@ -1,0 +1,53 @@
+//This file fixes bugs and weird settings in Alpha
+
+.invisible {
+  // This is for making items invisible that Alpha adds
+  display: none;
+}
+
+.bootstrapFooterTD,
+#tbi.DIVIDER{
+  //Hide all Divider's
+  @extend .invisible;
+}
+
+.bootstrapEditBG{
+  @extend .buttongroup;
+}
+
+/* stylelint-disable-next-line selector-no-qualifying-type */
+div[id^="tbi.PANE."]{
+  /* stylelint-disable-next-line declaration-no-important */
+  padding: 0 !important;
+}
+
+.A5CWLayout {
+  //Override all A5CWLayout's across entire app
+  /* stylelint-disable-next-line declaration-no-important */
+  box-sizing: inherit !important;
+  /* stylelint-disable-next-line declaration-no-important */
+  float: left !important;
+  /* stylelint-disable-next-line declaration-no-important */
+  padding: .1rem .1rem !important;
+}
+
+.row div {
+  width: 100%;
+}
+
+#LOG\.MASTERTEMPLATE,
+#REGION\.MASTERTEMPLATE {
+  @extend .vertically-center;
+}
+
+.repeatingSection {
+  .thead-default {
+    @extend .invisible;
+  }
+  .repeatingRow {
+    div {
+      width: 100%;
+    }
+  }
+}
+

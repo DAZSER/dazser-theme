@@ -1,0 +1,40 @@
+.tree {
+  color: map-get($theme-colors, primary);
+  cursor: default;
+  &Item {
+    & + ul {
+      /* stylelint-disable-next-line declaration-no-important */
+      margin-left: 12px !important;
+    }
+    &Label {
+      width: 100%;
+      color: inherit;
+      cursor: default;
+      //display: inline-block;
+    }
+    &Hover{
+      color: map-get($theme-colors, primary);
+      background-color: map-get($grays, 300);
+    }
+    &Selected {
+      color: map-get($grays, 300);
+      background: map-get($theme-colors, primary);
+      .icon {
+        fill: map-get($grays, 300);
+      }
+      &:hover{
+        color: map-get($grays, 300);
+      }
+    }
+  }
+  /* stylelint-disable */
+  &Disabled {
+    color: grey;
+    border-color: silver;
+    .icon {
+      fill: pink;
+      stroke: blue;
+    }
+  }
+  /* stylelint-enable */
+}

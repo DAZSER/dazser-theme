@@ -1,0 +1,67 @@
+.buttongroup {
+  @extend .form-control;
+  /* stylelint-disable-next-line declaration-no-important */
+  display: inline-block !important;
+  padding: 0;
+  /* stylelint-disable-next-line declaration-no-important */
+  margin-top: 0 !important;
+  /* stylelint-disable-next-line declaration-no-important */
+  background-color: transparent !important;
+  &-focus{
+    color: #464a4c;
+    border-color: #5cb3fd;
+    //outline: -webkit-focus-ring-color auto 5px;
+  }
+  &-input{
+    margin-top: 0;
+    border-width: 0;
+    &[disabled]{
+      cursor: not-allowed;
+      background-color: map-get($grays, 300);
+    }
+  }
+  &-button{
+    padding: 1px 0 0 0;
+    /* stylelint-disable-next-line declaration-no-important */
+    border: 0 !important;
+  }
+  input{
+    width: 100%;
+    padding: 4px 8px;
+    /* stylelint-disable-next-line declaration-no-important */
+    margin-top: 0 !important;
+    //font-size: 0.875rem;
+    background-color: transparent;
+    &:focus{
+      border: 0;
+      outline: 0;
+    }
+  }
+  th,
+  td {
+    padding: 0;
+    border: 0;
+  }
+  .grid-dv-data table & {
+    //Hack for adding extra margin to Search
+    /* stylelint-disable-next-line declaration-no-important */
+    margin-top: .5rem !important;
+  }
+}
+
+.table{
+  .buttongroup{
+    //Fix
+    /* stylelint-disable-next-line declaration-no-important */
+    width: inherit !important;
+  }
+  &-inverse {
+    .buttongroup {
+      border-color: map-get($grays, 300);
+      //margin-top: 0 !important;
+      input {
+        color: map-get($grays, 300);
+      }
+    }
+  }
+}

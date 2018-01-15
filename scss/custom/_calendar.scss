@@ -1,0 +1,16 @@
+.fc {
+  &-event{
+    /* stylelint-disable-next-line declaration-no-important */
+    background-color: $blue !important;
+    /* stylelint-disable-next-line declaration-no-important */
+    border-color: $blue !important;
+  }
+  &-time{
+    /* stylelint-disable-next-line declaration-no-important */
+    color: $white !important;
+  }
+  &-title{
+    /* stylelint-disable-next-line declaration-no-important */
+    color: $white !important;
+  }
+}

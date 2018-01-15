@@ -1,0 +1,120 @@
+.modal{
+  &-dialog {
+    // Hack to override max-width @media query
+    /* stylelint-disable-next-line declaration-no-important */
+    max-width: inherit !important;
+  }
+  &-content {
+    max-height: 85vh;
+  }
+  &-body{
+    // Hack to override no scrolling
+    overflow: auto;
+  }
+  &-buttons{
+    margin-left: $card-spacer-x;
+  }
+  &-bottom-bar{
+    /* stylelint-disable-next-line declaration-no-important */
+    display: block !important;
+    height: $card-spacer-y;
+  }
+}
+
+//iframe.card-block{
+//  padding-right: inherit !important;
+//}
+
+/* pointer - window / menu */
+
+$backColor: $white;
+$lineColor: darken($backColor, 15%);
+
+.pointer{
+  width: 0;
+  height: 0;
+  &Down{
+    bottom: -11px;
+    left: 50%;
+    margin-left: -10px;
+    border-top: 10px solid $lineColor;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    &::after {
+      position: absolute;
+      bottom: 1px;
+      left: 50%;
+      display: block;
+      width: 0;
+      height: 0;
+      margin-left: -10px;
+      content: "";
+      border-top: 10px solid $backColor;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+    }
+  }
+  &Up {
+    top: -11px;
+    left: 50%;
+    margin-left: -10px;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $lineColor;
+    border-left: 10px solid transparent;
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: 50%;
+      display: block;
+      width: 0;
+      height: 0;
+      margin-left: -10px;
+      content: "";
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $backColor;
+      border-left: 10px solid transparent;
+    }
+  }
+  &Left {
+    top: 50%;
+    left: -11px;
+    margin-top: -10px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid $lineColor;
+    border-bottom: 10px solid transparent;
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 1px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin-top: -10px;
+      content: "";
+      border-top: 10px solid transparent;
+      border-right: 10px solid $backColor;
+      border-bottom: 10px solid transparent;
+    }
+  }
+  &Right {
+    top: 50%;
+    right: -11px;
+    margin-top: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid $lineColor;
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 1px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin-top: -10px;
+      content: "";
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid $backColor;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.grid{
+  &-header{
+    //These styles are pulled from _table.scss
+    // I had to pull them this way because Alpha doesn't use <thead> for Grids
+    color: $table-head-color;
+    vertical-align: bottom;
+    background-color: $table-head-bg;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  &-footer {
+    @extend .font-weight-bold;
+    .form-control {
+      // This overrides block styling for footer inputs and selects
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  &-dv{
+    //&-label{}
+    &-data{
+      font-size: .875rem;
+      font-weight: $headings-font-weight;
+      label {
+        //Don't wrap Lables
+        white-space: nowrap;
+      }
+      @at-root {
+        span#{&}{
+          //Span with .grid-dv-label as class
+          //Added here for semantic purposes
+          margin-bottom: .3rem;
+          white-space: nowrap;
+        }
+      }
+      //&-error{}
+    }
+  }
+}
+
+.table {
+  .btn {
+    //Vertically space out the buttons
+    //margin-top: -.2rem;
+    //margin-bottom: .1rem
+  }
+  td {
+    table {
+      margin-top: -.3rem;
+      /* stylelint-disable-next-line selector-max-type */
+      & input {
+        margin-top: .5rem;
+      }
+    }
+  }
+  &-sm th,
+  &-sm td{
+    padding-bottom: 0;
+    @at-root .modal-body &{
+      border-top: 0;
+    }
+  }
+  margin-bottom: 0;
+  tbody + tbody {
+    border-top: 0;
+  }
+}
+
+.table-inverse {
+  background-color: map-get($theme-colors, primary);
+  & td,
+  & th,
+  & thead {
+    border-color: $table-border-color;
+  }
+  .btn {
+    border: $border-width solid map-get($grays, 300);
+  }
+}

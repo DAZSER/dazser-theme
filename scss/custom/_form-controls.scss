@@ -1,0 +1,37 @@
+/* stylelint-disable selector-no-qualifying-type */
+
+// .form-group-label{}
+
+select.form-control {
+  // Create them with Custom Select options
+  //@extend .custom-select;
+  //height: $input-height-sm;
+  .table-sm & {
+    // Override margin's for inside tables
+    //margin-top: -.2rem;
+    //margin-bottom: .1rem;
+  }
+  &[multiple] {
+    //height: auto;
+    //background: none;
+  }
+}
+
+input{
+  &[type="checkbox"] {
+    & + label{
+      margin-bottom: .1rem;
+    }
+  }
+}
+select{
+  &.form-control-sm {
+    margin-top: -.1rem;
+  }
+}
+
+.form-inline {
+  display: inline-flex;
+}
+
+/* stylelint-enable selector-no-qualifying-type */

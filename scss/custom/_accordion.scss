@@ -1,0 +1,32 @@
+.card {
+  //Override Bootstrap's Card Padding
+  border: 0;
+  &-body {
+    padding: 2px;
+    & & {
+      //Negate the Card Padding to expand the card's to equal size with a field.
+      padding: -2px;
+      //Remove Card Border from cards within cards
+      border: $border-width solid transparent;
+    }
+  }
+  &-title{
+    &:hover{
+      text-decoration: none;
+    }
+    &-selected{
+      color: $white;
+      text-decoration: none;
+      background-color: map-get($theme-colors, primary);
+    }
+    &-disabled {
+      color: map-get($grays, 600);
+      cursor: not-allowed;
+      &:hover{
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

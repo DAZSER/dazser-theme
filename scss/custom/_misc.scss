@@ -1,0 +1,84 @@
+.page{
+  background-color: #f2f2f2;
+}
+
+/* .link{}
+.text{}
+.group-label{} */
+
+.icon {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  vertical-align: middle;
+  fill: rgba(0, 0, 0, .54);
+  &-disabled {
+    fill: rgba(0, 0, 0, .26);
+  }
+  &-hover{
+    fill: #00bcd4;
+  }
+}
+
+label{
+  padding-left: $table-cell-padding-sm;
+  font-weight: $headings-font-weight;
+}
+
+.table-inverse {
+  .icon {
+    fill: rgba(255, 255, 255, 1);
+    &-disabled {
+      fill: rgba(255, 255, 255, .3);
+    }
+    &-hover {
+      fill: #00bcd4;
+    }
+  }
+}
+
+.table {
+  //width: auto !important;
+}
+
+.btn-inverse {
+  border: $border-width solid $white;
+}
+
+/* .btn-container{
+  //This gives buttons a little bit of wiggle room
+  padding: 0 .1rem;
+} */
+
+.wait{
+  &-message{
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+  }
+  &-lock{
+    background-color: $black;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+  }
+}
+
+.lock {
+  background-color: #000;
+  /* stylelint-disable-next-line declaration-no-important */
+  opacity: .5 !important;
+  transition: opacity .15s linear;
+}
+
+.vertically-center{
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+.resizable {
+  width: 24px;
+  height: 24px;
+  cursor: ne-resize;
+  background-color: rgba(0, 128, 0, 1);
+}
