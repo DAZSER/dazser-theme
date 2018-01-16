@@ -68,6 +68,7 @@
 }
 
 .table-inverse {
+  color: color-yiq(theme-color($key: "primary"));
   background-color: theme-color($key: "primary");
   & td,
   & th,
