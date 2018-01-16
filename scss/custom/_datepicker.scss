@@ -31,7 +31,7 @@
   &-panel-item{
     display: block;
     &-selected{
-      //@include button-variant(lighten(gray($key: "600"), 10), darken(gray($key: "600"), 10), darken(gray($key: "600"), 20));
+      @include button-variant(lighten(gray($key: "600"), 10), darken(gray($key: "600"), 10), darken(gray($key: "600"), 20));
       height: 100%;
       line-height: 2rem;
       color: $white;
