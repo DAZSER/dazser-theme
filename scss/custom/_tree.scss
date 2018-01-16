@@ -3,6 +3,7 @@
   cursor: default;
   &Item {
     & + ul {
+      // Add margin to tree branches
       /* stylelint-disable-next-line declaration-no-important */
       margin-left: 12px !important;
     }
