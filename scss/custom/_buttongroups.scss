@@ -1,69 +1,75 @@
 .buttongroup {
+  // We are extending the form-control bootstrap feature so it will look like normal inputs
+  // These are supposed to be bootstrap's input group's, but it works better with button groups
   @extend .form-control;
+  @extend .form-control-sm;
+  // Override the inline-block of Alpha in order to get border-radius
   /* stylelint-disable-next-line declaration-no-important */
   display: inline-block !important;
+  // Remove double padding from nested inputs.
   padding: 0;
-  /* stylelint-disable-next-line declaration-no-important */
-  margin-top: 0 !important;
-  /* stylelint-disable-next-line declaration-no-important */
-  background-color: transparent !important;
   &-focus{
-    color: #495057;
-    background-color: #fff;
-    border-color: #bad3fb;
+    // The following :focus event is ripped directly from node_modules\bootstrap\scss\mixins\_forms.scss
+    // I had to pull it out of the mixin because the mixin added :focus
+    color: $input-focus-color;
+    background-color: $input-focus-bg;
+    border-color: $input-focus-border-color;
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 0 .2rem rgba(66, 133, 244, .25);
-  }
-  &-input{
-    margin-top: 0;
-    border-width: 0;
-    &[disabled]{
-      cursor: not-allowed;
-      background-color: gray($key: "300");
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-focus-box-shadow;
+    } @else {
+      box-shadow: $input-focus-box-shadow;
     }
   }
   &-button{
-    padding: 1px 0 0 0;
+    // This vertically centers the calendar button
     /* stylelint-disable-next-line declaration-no-important */
-    border: 0 !important;
+    padding-top: 2px !important;
   }
-  input{
-    width: 100%;
-    padding: 4px 8px;
+  &-input {
+    // Make sure there is no spacing for inputs
     /* stylelint-disable-next-line declaration-no-important */
     margin-top: 0 !important;
-    //font-size: 0.875rem;
-    background-color: transparent;
+    //Remove the border from the input's
+    border: 0;
     &:focus{
-      border: 0;
+      // I don't want it to highlight on :focus
       outline: 0;
+    }
+    /* stylelint-disable-next-line selector-no-qualifying-type */
+    &[disabled] {
+      cursor: not-allowed;
+      background-color: gray("300");
     }
   }
   th,
   td {
+    // The following removed the border and padding from interior table cells
     padding: 0;
     border: 0;
   }
   .grid-dv-data table & {
-    //Hack for adding extra margin to Search
-    /* stylelint-disable-next-line declaration-no-important */
-    margin-top: .5rem !important;
+    //Hack for adding extra margin to groups in Search parts
+    // We need that to help remove the extra border on the top of range fields
+    margin-top: .5rem;
   }
-}
-
-.table{
-  .buttongroup{
-    //Fix
+  @at-root .table & {
+    //Fix's the width of the button group when it's embedded in a row of a grid
     /* stylelint-disable-next-line declaration-no-important */
     width: inherit !important;
   }
-  &-inverse {
-    .buttongroup {
-      border-color: gray($key: "300");
-      //margin-top: 0 !important;
-      input {
-        color: gray($key: "300");
-      }
+  @at-root .table-inverse & {
+    border-color: color-yiq(theme-color("primary"));
+    input {
+      color: color-yiq(theme-color("primary"));
+      background-color: transparent;
     }
   }
+}
+
+.grid-dv-data td {
+  //This fixes the spacing for button group ranges in the search part
+  padding-top: 0;
+  border-top: 0;
 }
