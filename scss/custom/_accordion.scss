@@ -1,31 +1,26 @@
 .card {
-  //Override Bootstrap's Card Padding
+  //Accordion's are also used as the Frame's in Dialogs.
+  // Don't show the border to reduce 'blockiness'
   border: 0;
-  &-body {
-    padding: 2px;
-    & & {
-      //Negate the Card Padding to expand the card's to equal size with a field.
-      padding: -2px;
-      //Remove Card Border from cards within cards
-      border: $border-width solid transparent;
-    }
+  &-body &-body {
+    //Remove Card Border from cards within cards
+    border: $border-width solid transparent;
   }
+
   &-title{
-    &:hover{
-      text-decoration: none;
-    }
     &-selected{
-      color: $white;
-      text-decoration: none;
-      background-color: theme-color($key: "primary");
+      color: color-yiq(theme-color("primary"));
+      background-color: theme-color("primary");
+      &:hover{
+        color: color-yiq(theme-color("primary"));
+      }
     }
     &-disabled {
-      color: gray($key: "600");
+      color: $btn-link-disabled-color;
       cursor: not-allowed;
       &:hover{
-        a{
-          text-decoration: none;
-        }
+        color: $btn-link-disabled-color;
+        text-decoration: none;
       }
     }
   }
