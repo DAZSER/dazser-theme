@@ -2,6 +2,8 @@
   &-header{
     //These styles are pulled from _table.scss
     // I had to pull them this way because Alpha doesn't use <thead> for Grids
+    // .table thead th
+    // .thead-light { th
     color: $table-head-color;
     vertical-align: bottom;
     background-color: $table-head-bg;
@@ -40,42 +42,53 @@
 }
 
 .table {
-  .btn {
-    //Vertically space out the buttons
-    //margin-top: -.2rem;
-    //margin-bottom: .1rem
-  }
-  td {
-    table {
-      margin-top: -.3rem;
-      /* stylelint-disable-next-line selector-max-type */
-      & input {
-        margin-top: .5rem;
-      }
+  margin-bottom: 0;
+  .grid-cell {
+    // Use this to pinpoint items inside of cells!
+    // This is mainly used to fix spacing
+    .buttongroup {
+      //Need to move them closer, so I have to use negative margins
+      margin-top: -.2rem;
+      margin-bottom: -.3rem;
+    }
+    .btn {
+      margin-top: -.2rem;
+      margin-bottom: .1rem;
+    }
+    select {
+      margin-bottom: .1rem;
     }
   }
   &-sm th,
-  &-sm td{
+  &-sm td {
     padding-bottom: 0;
-    @at-root .modal-body &{
-      border-top: 0;
-    }
+    //@at-root .modal-body &{
+    //  border-top: 0;
+    //}
   }
-  margin-bottom: 0;
   tbody + tbody {
     border-top: 0;
   }
+
+  //td {
+  //  table {
+  //   /* stylelint-disable-next-line selector-max-type */
+  //    input {
+  //      margin-top: .5rem;
+  //    }
+  //  }
+  //} 
 }
 
 .table-inverse {
-  color: color-yiq(theme-color($key: "primary"));
-  background-color: theme-color($key: "primary");
+  color: color-yiq(theme-color("primary"));
+  background-color: theme-color("primary");
   & td,
   & th,
   & thead {
     border-color: $table-border-color;
   }
   .btn {
-    border: $border-width solid gray($key: "300");
+    border: $border-width solid color-yiq(theme-color("primary"));
   }
 }
