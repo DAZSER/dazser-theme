@@ -61,6 +61,7 @@
     width: inherit !important;
   }
   @at-root .table-inverse & {
+    background-color: transparent;
     border-color: color-yiq(theme-color("primary"));
     input {
       color: color-yiq(theme-color("primary"));
