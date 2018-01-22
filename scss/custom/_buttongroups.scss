@@ -39,8 +39,9 @@
     }
     /* stylelint-disable-next-line selector-no-qualifying-type */
     &[disabled] {
+      color: $input-color;
       cursor: not-allowed;
-      background-color: gray("300");
+      background-color: $input-disabled-bg;
     }
   }
   th,
