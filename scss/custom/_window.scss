@@ -3,11 +3,34 @@
     // Hack to override max-width @media query
     /* stylelint-disable-next-line declaration-no-important */
     max-width: inherit !important;
+    /* stylelint-disable-next-line declaration-no-important */
+    margin: inherit !important;
+  }
+  &-adjustment {
+    // This is a class that get's added on when resizing or moving the modal
+    // This is stolen from .modal-dialog
+    background: rgba(255, 255, 255, $modal-backdrop-opacity);
+    border: $modal-content-border-width*2 solid $modal-content-border-color;
+    @include border-radius($border-radius-lg);
+    @include box-shadow($modal-content-box-shadow-xs);
+    .modal-content {
+      // Bugfix for consistency between resize and drag
+      visibility: hidden;
+    }
+  }
+  &-header {
+    span {
+      // Hack to add .modal-title to the span inside of the modal-header
+      @extend .modal-title;
+    }
   }
   &-content {
+    // Set the max height of content
     max-height: 85vh;
   }
   &-body{
+    // Push up body 12px for resizer
+    margin-bottom: 12px;
     // Hack to override no scrolling
     overflow: auto;
   }
@@ -21,23 +44,26 @@
   }
 }
 
-//iframe.card-block{
-//  padding-right: inherit !important;
-//}
-
-/* pointer - window / menu */
-
-$backColor: $white;
-$lineColor: darken($backColor, 15%);
+.window {
+  &-resizer {
+    //This is the handle for the resizer
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' class='si-glyph si-glyph-angle-2'><g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g fill='#434343'><path d='M0.65 15.94C0.49 15.94 0.33 15.88 0.21 15.76 -0.03 15.52-0.03 15.13 0.21 14.89L14.95 0.18C15.19-0.06 15.58-0.06 15.82 0.18 16.06 0.42 16.06 0.81 15.82 1.05L1.09 15.76C0.97 15.88 0.81 15.94 0.65 15.94L0.65 15.94ZM5.65 16.01C5.49 16.01 5.33 15.95 5.21 15.83 4.97 15.58 4.97 15.19 5.21 14.94L14.93 5.22C15.18 4.97 15.57 4.97 15.82 5.22 16.06 5.46 16.06 5.86 15.82 6.1L6.09 15.83C5.97 15.95 5.81 16.01 5.65 16.01L5.65 16.01ZM10.63 15.99C10.48 15.99 10.32 15.93 10.21 15.81 9.97 15.57 9.97 15.19 10.21 14.95L14.96 10.2C15.2 9.97 15.58 9.97 15.81 10.2 16.05 10.44 16.05 10.82 15.81 11.06L11.06 15.81C10.94 15.93 10.79 15.99 10.63 15.99L10.63 15.99Z' class='si-glyph-fill'/></g></g></svg>");
+  }
+}
 
 .pointer{
   width: 0;
   height: 0;
-  &Down{
+  &-down{
     bottom: -11px;
     left: 50%;
     margin-left: -10px;
-    border-top: 10px solid $lineColor;
+    border-top: 10px solid $modal-content-border-color;
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
     &::after {
@@ -49,17 +75,17 @@ $lineColor: darken($backColor, 15%);
       height: 0;
       margin-left: -10px;
       content: "";
-      border-top: 10px solid $backColor;
+      border-top: 10px solid $modal-content-bg;
       border-right: 10px solid transparent;
       border-left: 10px solid transparent;
     }
   }
-  &Up {
+  &-up {
     top: -11px;
     left: 50%;
     margin-left: -10px;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid $lineColor;
+    border-bottom: 10px solid $modal-content-border-color;
     border-left: 10px solid transparent;
     &::after {
       position: absolute;
@@ -71,16 +97,16 @@ $lineColor: darken($backColor, 15%);
       margin-left: -10px;
       content: "";
       border-right: 10px solid transparent;
-      border-bottom: 10px solid $backColor;
+      border-bottom: 10px solid $modal-content-bg;
       border-left: 10px solid transparent;
     }
   }
-  &Left {
+  &-left {
     top: 50%;
     left: -11px;
     margin-top: -10px;
     border-top: 10px solid transparent;
-    border-right: 10px solid $lineColor;
+    border-right: 10px solid $modal-content-border-color;
     border-bottom: 10px solid transparent;
     &::after {
       position: absolute;
@@ -92,17 +118,17 @@ $lineColor: darken($backColor, 15%);
       margin-top: -10px;
       content: "";
       border-top: 10px solid transparent;
-      border-right: 10px solid $backColor;
+      border-right: 10px solid $modal-content-bg;
       border-bottom: 10px solid transparent;
     }
   }
-  &Right {
+  &-right {
     top: 50%;
     right: -11px;
     margin-top: -10px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid $lineColor;
+    border-left: 10px solid $modal-content-border-color;
     &::after {
       position: absolute;
       top: 50%;
@@ -114,7 +140,7 @@ $lineColor: darken($backColor, 15%);
       content: "";
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-left: 10px solid $backColor;
+      border-left: 10px solid $modal-content-bg;
     }
   }
 }
