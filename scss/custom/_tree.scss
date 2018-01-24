@@ -1,41 +1,33 @@
 .tree {
-  color: theme-color($key: "primary");
-  cursor: default;
-  &Item {
-    & + ul {
-      // Add margin to tree branches
+  &-branch {
+    & & {
+      // Add padding to nested tree branches
       /* stylelint-disable-next-line declaration-no-important */
-      margin-left: 12px !important;
+      padding-left: 1rem !important;
     }
-    &Label {
+  }
+  &-item {
+    &-label {
+      display: inline-block;
       width: 100%;
       color: inherit;
       cursor: default;
-      //display: inline-block;
     }
-    &Hover{
-      color: theme-color($key: "primary");
-      background-color: gray($key: "300");
+    &-hover{
+      a {
+        color: theme-color("primary");
+      }
+      background-color: gray("300");
     }
-    &Selected {
-      color: gray($key: "300");
-      background: theme-color($key: "primary");
+    &-selected {
+      color: color-yiq(theme-color("primary"));
+      background: theme-color("primary");
+      a {
+        color: color-yiq(theme-color("primary"));
+      }
       .icon {
-        fill: gray($key: "300");
-      }
-      &:hover{
-        color: gray($key: "300");
+        fill: gray("300");
       }
     }
   }
-  /* stylelint-disable */
-  &Disabled {
-    color: grey;
-    border-color: silver;
-    .icon {
-      fill: pink;
-      stroke: blue;
-    }
-  }
-  /* stylelint-enable */
 }
