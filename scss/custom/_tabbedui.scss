@@ -4,23 +4,26 @@
 .sidebar {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  background-color: gray($key: "200");
+  background-color: $jumbotron-bg;
   &-left{
-    border-right: $border-width solid gray($key: "300");
+    border-right: $border-width solid $border-color;
   }
   &-right{
-    border-left: $border-width solid gray($key: "300");
+    border-left: $border-width solid $border-color;
   }
 }
 
-.sidebar-header{
-  @extend .navbar;
-  display: inherit;
-  background-color: theme-color($key: "primary");
-  box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
-  //color: theme-color($key: "dark");
-  a{
-    color: $white;
+.navbar {
+  &-header {
+    display: inherit;
+    background-color: theme-color("primary");
+    @include box-shadow($modal-content-box-shadow-xs);
+    a{
+      color: color-yiq(theme-color("primary"));
+    }
+  }
+  &-footer {
+    //nothing
   }
 }
 
@@ -28,17 +31,18 @@
  * Tabbed UI Content window
  */
 .main {
+  // This pushes the main content down off of the top navbar
   /* stylelint-disable-next-line declaration-no-important */
-  padding: $form-text-margin-top 0 0 !important;
+  padding-top: $form-text-margin-top !important;
 }
 
-.tabSearchResults {
-  margin-top: $form-text-margin-top;
-}
-
-.tabSearchResultsButton {
-  max-width: 9vw;
-  /* stylelint-disable-next-line declaration-no-important */
-  margin-bottom: .5rem !important;
-  margin-left: .5rem;
+.tabSearch {
+  // Integrated search for tabbed ui
+  &Results{
+    margin-top: $form-text-margin-top;
+    &Button{
+      max-width: 9vw;
+      margin-left: $input-btn-padding-x-sm;
+    }
+  }
 }
