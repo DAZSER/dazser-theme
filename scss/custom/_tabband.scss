@@ -1,36 +1,35 @@
-.tabband {
-  //border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
-  @extend .nav-tabs;
-  margin-bottom: $spacer/4;
+.tab{
+  &-band {
+    @extend .nav-tabs;
+    margin-bottom: $spacer/4;
+  }
 
-  &Tab{
+  &-item{
     @extend .nav-link;
     padding: .1rem;
     margin-right: .2rem; //$nav-item-margin;
     margin-bottom: -$nav-tabs-border-width;
     white-space: nowrap;
     background-color: $nav-tabs-link-active-bg;
-    border: $nav-tabs-border-width solid transparent;
-    //Make sure unselected tabs have a bottom border
-    /* stylelint-disable-next-line declaration-no-important */
-    border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color !important;
+    border: $nav-tabs-border-width solid $nav-tabs-border-color;
     @include border-top-radius($nav-tabs-border-radius);
     @include hover-focus {
       border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $white;
     }
+    .icon {
+      width: 12px;
+      height: 12px;
+    }
 
-    &Selected,
-    &Selected:hover{
-      @extend .tabbandTab;
+    &--selected,
+    &--selected:hover{
       color: $nav-tabs-link-active-color;
       /* stylelint-disable-next-line declaration-no-important */
       border-color: $nav-tabs-link-active-border-color !important;
-      /* stylelint-disable-next-line declaration-no-important */
-      border-bottom-color: transparent !important;
     }
-    &Disabled,
-    &Disabled:hover{
-      @extend .tabbandTab;
+
+    &--disabled,
+    &--disabled:hover{
       color: $nav-link-disabled-color;
       border-color: transparent;
       border-bottom-color: $nav-tabs-border-color;
@@ -38,16 +37,17 @@
         fill: $nav-link-disabled-color;
       }
     }
-    &Button,
-    &ButtonDisabled{
-      @extend .tabbandTab;
-      margin-right: 0;
-      &:hover{
-        border: $nav-tabs-border-width solid transparent;
-        border-bottom-color: $nav-tabs-border-color;
-        .icon{
-          fill: $nav-tabs-link-active-color;
-        }
+  }
+
+  &-button,
+  &-button--disabled{
+    margin-right: 0;
+    margin-bottom: $spacer/4;
+    &:hover{
+      border: $nav-tabs-border-width solid transparent;
+      border-bottom-color: $nav-tabs-border-color;
+      .icon{
+        fill: $nav-tabs-link-active-color;
       }
     }
   }
@@ -55,9 +55,9 @@
 
 .bootstrapTabTBand {
   //These are overrides for a tabbed ui inside a pane, eg. customers, franchises
-  @extend .tabband;
+  @extend .tab-band;
   a {
-    @extend .tabbandTab;
+    @extend .tab-item;
     /* stylelint-disable-next-line declaration-no-important */
     display: inline-block !important;
   }
