@@ -1,16 +1,16 @@
 .fc {
   &-event{
     /* stylelint-disable-next-line declaration-no-important */
-    background-color: $blue !important;
+    background-color: theme-color("primary") !important;
     /* stylelint-disable-next-line declaration-no-important */
-    border-color: $blue !important;
+    border-color: theme-color("primary") !important;
   }
   &-time{
     /* stylelint-disable-next-line declaration-no-important */
-    color: $white !important;
+    color: color-yiq(theme-color("primary")) !important;
   }
   &-title{
     /* stylelint-disable-next-line declaration-no-important */
-    color: $white !important;
+    color: color-yiq(theme-color("primary")) !important;
   }
 }
