@@ -34,6 +34,14 @@
   // This pushes the main content down off of the top navbar
   /* stylelint-disable-next-line declaration-no-important */
   padding-top: $form-text-margin-top !important;
+
+  // This removes the padding on the actual Tabbed UI Pane
+  // Brings things right to the edge of the window
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  div[id^="tbi.PANE."]{
+    /* stylelint-disable-next-line declaration-no-important */
+    padding: 0 !important;
+  }
 }
 
 .tabSearch {
