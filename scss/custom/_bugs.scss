@@ -2,6 +2,7 @@
 
 .invisible {
   // This is for making items invisible that Alpha adds
+  // like extra rows or borders, etc...
   display: none;
 }
 
@@ -9,16 +10,6 @@
 #tbi.DIVIDER{
   //Hide all Divider's
   @extend .invisible;
-}
-
-.bootstrapEditBG{
-  @extend .buttongroup;
-}
-
-/* stylelint-disable-next-line selector-no-qualifying-type */
-div[id^="tbi.PANE."]{
-  /* stylelint-disable-next-line declaration-no-important */
-  padding: 0 !important;
 }
 
 .A5CWLayout {
@@ -31,9 +22,9 @@ div[id^="tbi.PANE."]{
   padding: .1rem .1rem !important;
 }
 
-.row div {
-  width: 100%;
-}
+//.row div {
+//  width: 100%;
+//}
 
 #LOG\.MASTERTEMPLATE,
 #REGION\.MASTERTEMPLATE {

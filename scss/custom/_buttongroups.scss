@@ -75,3 +75,8 @@
   padding-top: 0;
   border-top: 0;
 }
+
+// Add buttongroup to legacy bg
+.bootstrapEditBG{
+  @extend .buttongroup;
+}
