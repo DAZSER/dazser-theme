@@ -2,9 +2,12 @@
   //Accordion's are also used as the Frame's in Dialogs.
   // Don't show the border to reduce 'blockiness'
   border: 0;
-  &-body &-body {
-    //Remove Card Border from cards within cards
-    border: $border-width solid transparent;
+  &-body {
+    padding-top: .2rem;
+    & & {
+      //Remove Card Border from cards within cards
+      border: $border-width solid transparent;
+    }
   }
 
   &-title{
