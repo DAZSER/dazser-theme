@@ -54,3 +54,10 @@
     }
   }
 }
+
+@media print {
+  .sidebar,
+  .navbar {
+    display: none;
+  }
+}

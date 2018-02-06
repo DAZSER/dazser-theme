@@ -61,8 +61,13 @@
     /* stylelint-disable-next-line declaration-no-important */
     display: inline-block !important;
   }
-  .tabbandTabSelected {
-    /* stylelint-disable-next-line declaration-no-important */
-    border-bottom-color: transparent !important;
+  .bootstarpTabTPanes {
+    @extend .tab-pane;
+  }
+}
+
+@media print {
+  .tab {
+    display: none;
   }
 }
