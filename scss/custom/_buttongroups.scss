@@ -28,6 +28,8 @@
     padding-top: 2px !important;
   }
   &-input {
+    // Make sure we have spacing inside the input
+    padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
     // Make sure there is no spacing for inputs
     /* stylelint-disable-next-line declaration-no-important */
     margin-top: 0 !important;
