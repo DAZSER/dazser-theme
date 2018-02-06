@@ -20,6 +20,11 @@
   float: left !important;
   /* stylelint-disable-next-line declaration-no-important */
   padding: .1rem .1rem !important;
+  & & {
+    // When it's nested, remove the top padding 
+    /* stylelint-disable-next-line declaration-no-important */
+    padding-top: 0 !important;
+  }
 }
 
 //.row div {
