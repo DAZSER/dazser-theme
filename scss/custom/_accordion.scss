@@ -3,11 +3,16 @@
   // Don't show the border to reduce 'blockiness'
   border: 0;
   &-body {
-    padding-top: .2rem;
+    padding: .2rem;
     & & {
       //Remove Card Border from cards within cards
       border: $border-width solid transparent;
     }
+  }
+
+  &-header {
+    // Aligns the title
+    padding-left: .5rem;
   }
 
   &-title{
