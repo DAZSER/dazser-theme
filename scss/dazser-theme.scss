@@ -26,7 +26,7 @@
 //@import "node_modules/bootstrap/scss/pagination";
 //@import "node_modules/bootstrap/scss/badge";
 //@import "node_modules/bootstrap/scss/jumbotron";
-//@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/alert";
 //@import "node_modules/bootstrap/scss/progress";
 //@import "node_modules/bootstrap/scss/media";
 //@import "node_modules/bootstrap/scss/list-group";
@@ -38,7 +38,7 @@
 
 // Utilities
 @import "node_modules/bootstrap/scss/utilities/align";
-//@import "node_modules/bootstrap/scss/utilities/background";
+@import "node_modules/bootstrap/scss/utilities/background";
 //@import "node_modules/bootstrap/scss/utilities/borders";
 @import "node_modules/bootstrap/scss/utilities/clearfix";
 //@import "node_modules/bootstrap/scss/utilities/display";
@@ -50,7 +50,7 @@
 //@import "node_modules/bootstrap/scss/utilities/sizing";
 //@import "node_modules/bootstrap/scss/utilities/spacing";
 @import "node_modules/bootstrap/scss/utilities/text";
-@import "node_modules/bootstrap/scss/utilities/visibility";
+//@import "node_modules/bootstrap/scss/utilities/visibility";
 
 // Print
 @import "node_modules/bootstrap/scss/print";
