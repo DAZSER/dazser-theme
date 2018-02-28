@@ -73,3 +73,21 @@ label{
   min-height: 100%;
   min-height: 100vh;
 }
+
+.repeating {
+  &-section {
+    .thead-default {
+      @extend .invisible;
+    }
+    /* stylelint-disable-next-line selector-no-qualifying-type */
+    div[id^="CONTENT"]{
+      /* stylelint-disable-next-line declaration-no-important */
+      height: inherit !important;
+    }
+  }
+  &-row {
+    div {
+      width: 100%;
+    }
+  }
+}
