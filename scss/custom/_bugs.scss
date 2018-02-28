@@ -6,6 +6,7 @@
   display: none;
 }
 
+/* stylelint-disable-next-line selector-max-id */
 .bootstrapFooterTD,
 #tbi.DIVIDER{
   //Hide all Divider's
@@ -31,6 +32,7 @@
 //  width: 100%;
 //}
 
+/* stylelint-disable-next-line selector-max-id */
 #LOG\.MASTERTEMPLATE,
 #REGION\.MASTERTEMPLATE {
   @extend .vertically-center;
