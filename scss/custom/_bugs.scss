@@ -35,15 +35,3 @@
 #REGION\.MASTERTEMPLATE {
   @extend .vertically-center;
 }
-
-.repeatingSection {
-  .thead-default {
-    @extend .invisible;
-  }
-  .repeatingRow {
-    div {
-      width: 100%;
-    }
-  }
-}
-

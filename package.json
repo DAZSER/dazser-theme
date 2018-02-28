@@ -21,12 +21,12 @@
     "clean-css-cli": "^4.1.10",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
-    "postcss-cli": "^4.1.1",
+    "postcss-cli": "^5.0.0",
     "stylelint": "^8.4.0",
-    "stylelint-config-recommended-scss": "^3.0.0",
-    "stylelint-config-standard": "^18.0.0",
-    "stylelint-order": "^0.8.0",
-    "stylelint-scss": "^2.3.0"
+    "stylelint-config-recommended-scss": "^3.1.0",
+    "stylelint-config-standard": "^18.1.0",
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^2.4.0"
   },
   "browserslist": [
     "last 1 major version",
