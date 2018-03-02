@@ -83,6 +83,10 @@
 .table-inverse {
   color: color-yiq(theme-color("primary"));
   background-color: theme-color("primary");
+  a {
+    color: color-yiq(theme-color("primary"));
+    background-color: theme-color("primary");
+  }
   & td,
   & th,
   & thead {
