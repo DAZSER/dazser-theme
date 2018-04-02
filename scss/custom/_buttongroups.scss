@@ -4,8 +4,9 @@
   @extend .form-control;
   @extend .form-control-sm;
   // Override the inline-block of Alpha in order to get border-radius
+  // BUG: Overrides the hidden fields
   /* stylelint-disable-next-line declaration-no-important */
-  display: inline-block !important;
+  //display: inline-block !important;
   // Remove double padding from nested inputs.
   padding: 0;
   &-focus{
