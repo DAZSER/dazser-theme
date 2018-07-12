@@ -17,7 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8.0.0",
-    "bootstrap": "4.1.1",
+    "bootstrap": "4.1.2",
     "clean-css-cli": "^4.1.10",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
