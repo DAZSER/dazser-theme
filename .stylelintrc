@@ -3,11 +3,8 @@
   "plugins": [
     "stylelint-order"
   ],
-  "ignoreFiles": [ "dist/**" ],
   "rules": {
-    "at-rule-empty-line-before": [null, {
-      "except": ["first-nested"]
-    }],
+    "at-rule-empty-line-before": null,
     "at-rule-name-space-after": "always",
     "at-rule-no-vendor-prefix": true,
     "at-rule-semicolon-space-before": "never",
@@ -34,6 +31,9 @@
     "no-descending-specificity": null,
     "no-duplicate-selectors": true,
     "number-leading-zero": "never",
+    "media-feature-name-no-unknown": [true, {
+      "ignoreMediaFeatureNames": ["prefers-reduced-motion"]
+    }],
     "order/properties-order": [
       "position",
       "top",
@@ -247,6 +247,7 @@
     ],
     "property-no-vendor-prefix": true,
     "rule-empty-line-before": null,
+    "scss/dollar-variable-default": [null, { "ignore": "local" }],
     "selector-attribute-quotes": "always",
     "selector-list-comma-newline-after": "always",
     "selector-list-comma-newline-before": "never-multi-line",
