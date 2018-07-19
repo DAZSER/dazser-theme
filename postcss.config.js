@@ -2,6 +2,9 @@
 
 module.exports = (ctx) => ({
   plugins: {
-    autoprefixer: {}
+    autoprefixer: {
+      cascade: false
+    },
+    'postcss-page-break': {}
   }
 })
