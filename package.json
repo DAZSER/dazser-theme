@@ -18,6 +18,7 @@
   "author": "Kyle McNally",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.0.0",
     "autoprefixer": "^8.6.3",
     "bootstrap": "4.1.2",
     "clean-css-cli": "^4.1.11",
