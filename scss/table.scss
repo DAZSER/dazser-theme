@@ -1,0 +1,215 @@
+$black: #000;
+$dark-grey: #424242; /* MD Grey 800 */
+$grey: #9e9e9e; /* MD Grey 500 */
+$light-grey: #eee; /* MD Grey 200 */
+$white: #fff;
+
+$warn: #ffeb3b; /* MD Yellow 500 */
+$error: #e57373; /* MD Red 300 */
+
+/* normalize.css */
+body { margin: 0; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/* table.css */
+html {
+  font-family: Tahoma, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.5em;
+  background-color: $grey;
+}
+
+@media screen {
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    padding: .5in;
+    margin: 2em auto;
+    background: $white;
+    box-shadow: 0 0 1in -.25in rgba(0, 0, 0, .5);
+  }
+}
+
+@media print {
+  * {
+    color: $black; /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+    box-shadow: none;
+    color-adjust: exact;
+  }
+
+  html {
+    background: $white;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 8.5in;
+    max-height: 11in;
+    padding: 0; /* Remove all Margin and Padding from the page */
+
+    /* BUG FIX: Need some margin (or padding) on the .page element
+       in order to 'make it a box' on Firefox, no ill effects on Chrome
+       https://bugzilla.mozilla.org/show_bug.cgi?id=1470436 */
+    margin: 1px;
+    break-after: page; /* Make sure to break after each .page div */
+  }
+
+  td,
+  th {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    size: letter portrait;
+  }
+
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    padding: 2px;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  td {
+    padding: 0 2px 1px;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+}
+
+.logo {
+  width: 185px;
+}
+
+.distribution {
+  color: $grey;
+}
+
+.odd {
+  th,
+  td {
+    background: $light-grey;
+  }
+}
+
+.right,
+.r {
+  text-align: right;
+}
+
+.center,
+.c {
+  text-align: center;
+}
+
+.heading {
+  font-size: 140%;
+  font-weight: 700;
+}
+
+.report-title { /* Report Title */ }
+
+.region { /* Region Name */ }
+
+.date {
+  font-weight: 700;
+}
+
+.top-border {
+  border-top: 1px solid $grey;
+}
+
+.left-border {
+  border-left: 4px solid $grey;
+}
+
+.underline{
+  border-bottom: 4px solid $grey;
+}
+
+.franchise{
+  font-weight: 700;
+}
+
+/* .heading-row th, .heading-row td{border-bottom:4px solid $grey;} */
+
+.total-row {
+  th,
+  td {
+    border-top: 4px solid $grey;
+  }
+}
+
+.subtotal-row {
+  th,
+  td {
+    padding-bottom: 8px;
+    border-top: 1px solid $grey;
+  }
+}
+
+.bold,
+.b {
+  font-weight: 700;
+}
+
+.caps{
+  text-transform: uppercase;
+}
+
+.moral td {
+  background: $warn;
+}
+
+.error,
+.error th,
+.error td,
+.legal td {
+  background: $error;
+}
+
+.push {
+  &-right {
+    padding-left: 10px;
+  }
+}
+
+.mailer {
+  margin-left: .25in;
+}
+
+.wrap {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.truncate { /* Empty */ }
+
+.heading-rule {
+  td {
+    padding: 0;
+    hr {
+      height: 4px;
+      margin: 0;
+      color: $grey;
+      background-color: $grey;
+      border: 0;
+    }
+  }
+}
