@@ -80,7 +80,8 @@ label{
       @extend .invisible;
     }
     /* stylelint-disable-next-line selector-no-qualifying-type */
-    div[id^="CONTENT"]{
+    div[id~="CONTENT"]{
+      width: 100%;
       /* stylelint-disable-next-line declaration-no-important */
       height: inherit !important;
     }
