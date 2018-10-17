@@ -4,6 +4,11 @@
   background-size: cover;
 }
 
+// Override default cursor for the full calendar
+.fc-day-grid-event {
+  cursor: default;
+}
+
 .icon {
   width: 24px;
   height: 24px;
