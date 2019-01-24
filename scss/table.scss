@@ -179,7 +179,9 @@ table {
 .error th,
 .error td,
 .legal td {
-  background: $error;
+  // Need to override whatever other styling there is for the background on cells
+  /* stylelint-disable-next-line declaration-no-important */
+  background: $error !important;
 }
 
 .push {
