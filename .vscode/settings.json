@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules/[^b]*": true
+    },
+    "stylelint.configOverrides": {
+        "ignoreFiles": "dist/**"
+    }
+}
