@@ -1,16 +1,48 @@
-.fc {
-  &-event{
-    /* stylelint-disable-next-line declaration-no-important */
-    background-color: theme-color("primary") !important;
-    /* stylelint-disable-next-line declaration-no-important */
-    border-color: theme-color("primary") !important;
+// Color overrides
+// This loop creates 10 class pairs
+// only for agenda-view and month-view
+$list: 1 2 3 4 5 6 7 8 9 10;
+@each $territory in $list {
+  .territory#{$territory}{
+    .fc-agenda-view,
+    .fc-month-view {
+      .territory#{$territory} {
+        // This block specifies events with a territory # inside a calendar that IS that territory
+        /* stylelint-disable-next-line declaration-no-important */
+        background-color: theme-color("success") !important;
+        /* stylelint-disable-next-line declaration-no-important */
+        border-color: theme-color("success") !important;
+      }
+    }
+
+    .fc-event {
+      // This block specifies events WITHOUT a territory #
+      background-color: theme-color("primary");
+      border-color: theme-color("primary");
+    }
   }
-  &-time{
-    /* stylelint-disable-next-line declaration-no-important */
-    color: color-yiq(theme-color("primary")) !important;
+
+  .fc-agenda-view,
+  .fc-month-view {
+    .territory#{$territory} {
+      // This block specifies events with a territory # inside a calendar that is not that territory
+      /* stylelint-disable-next-line declaration-no-important */
+      background-color: theme-color("secondary") !important;
+      /* stylelint-disable-next-line declaration-no-important */
+      border-color: theme-color("secondary") !important;
+    }
   }
-  &-title{
-    /* stylelint-disable-next-line declaration-no-important */
-    color: color-yiq(theme-color("primary")) !important;
-  }
+}
+
+.territory-event {
+  /* stylelint-disable-next-line declaration-no-important */
+  background-color: theme-color("success") !important;
+  /* stylelint-disable-next-line declaration-no-important */
+  border-color: theme-color("success") !important;
+}
+.non-territory-event {
+  /* stylelint-disable-next-line declaration-no-important */
+  background-color: theme-color("secondary") !important;
+  /* stylelint-disable-next-line declaration-no-important */
+  border-color: theme-color("secondary") !important;
 }
