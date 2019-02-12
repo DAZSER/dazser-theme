@@ -274,11 +274,22 @@ select {
   text-transform: none;
 }
 
+select {
+  word-wrap: normal;
+}
+
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer;
 }
 
 button::-moz-focus-inner,
@@ -369,10 +380,8 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
   font-weight: 500;
   line-height: 1.2;
-  color: inherit;
 }
 
 h1, .h1 {
@@ -488,7 +497,7 @@ mark,
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  background-color: transparent;
+  color: #212529;
 }
 
 .table th,
@@ -505,10 +514,6 @@ mark,
 
 .table tbody + tbody {
   border-top: 2px solid #dee2e6;
-}
-
-.table .table {
-  background-color: #fff;
 }
 
 .table-sm th,
@@ -542,6 +547,7 @@ mark,
 }
 
 .table-hover tbody tr:hover {
+  color: #212529;
   background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -738,8 +744,8 @@ mark,
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #212529;
-  border-color: #32383e;
+  background-color: #343a40;
+  border-color: #454d55;
 }
 
 .table .thead-light th {
@@ -750,13 +756,13 @@ mark,
 
 .table-dark {
   color: #fff;
-  background-color: #212529;
+  background-color: #343a40;
 }
 
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
-  border-color: #32383e;
+  border-color: #454d55;
 }
 
 .table-dark.table-bordered {
@@ -768,6 +774,7 @@ mark,
 }
 
 .table-dark.table-hover tbody tr:hover {
+  color: #fff;
   background-color: rgba(255, 255, 255, 0.075);
 }
 
@@ -777,7 +784,6 @@ mark,
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
   .table-responsive-sm > .table-bordered {
     border: 0;
@@ -790,7 +796,6 @@ mark,
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
   .table-responsive-md > .table-bordered {
     border: 0;
@@ -803,7 +808,6 @@ mark,
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
   .table-responsive-lg > .table-bordered {
     border: 0;
@@ -816,7 +820,6 @@ mark,
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
   .table-responsive-xl > .table-bordered {
     border: 0;
@@ -828,7 +831,6 @@ mark,
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .table-responsive > .table-bordered {
@@ -838,7 +840,7 @@ mark,
 .form-control, .buttongroup, .bootstrapEditBG {
   display: block;
   width: 100%;
-  height: calc(2.25rem + 2px);
+  height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -851,7 +853,7 @@ mark,
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   .form-control, .buttongroup, .bootstrapEditBG {
     transition: none;
   }
@@ -952,7 +954,7 @@ select.form-control:focus::-ms-value, select.buttongroup:focus::-ms-value, selec
 }
 
 .form-control-sm, .buttongroup, .bootstrapEditBG {
-  height: calc(1.8125rem + 2px);
+  height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -960,7 +962,7 @@ select.form-control:focus::-ms-value, select.buttongroup:focus::-ms-value, selec
 }
 
 .form-control-lg {
-  height: calc(2.875rem + 2px);
+  height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -1060,11 +1062,11 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
 
 .was-validated .form-control:valid, .was-validated .buttongroup:valid, .was-validated .bootstrapEditBG:valid, .form-control.is-valid, .is-valid.buttongroup, .is-valid.bootstrapEditBG {
   border-color: #28a745;
-  padding-right: 2.25rem;
-  background-repeat: no-repeat;
-  background-position: center right calc(2.25rem / 4);
-  background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+  padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center right calc(0.375em + 0.1875rem);
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .form-control:valid:focus, .was-validated .buttongroup:valid:focus, .was-validated .bootstrapEditBG:valid:focus, .form-control.is-valid:focus, .is-valid.buttongroup:focus, .is-valid.bootstrapEditBG:focus {
@@ -1083,14 +1085,14 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
 }
 
 .was-validated textarea.form-control:valid, .was-validated textarea.buttongroup:valid, .was-validated textarea.bootstrapEditBG:valid, textarea.form-control.is-valid, textarea.is-valid.buttongroup, textarea.is-valid.bootstrapEditBG {
-  padding-right: 2.25rem;
-  background-position: top calc(2.25rem / 4) right calc(2.25rem / 4);
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
 .was-validated .custom-select:valid, .custom-select.is-valid {
   border-color: #28a745;
-  padding-right: 3.4375rem;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") no-repeat center right 1.75rem/1.125rem 1.125rem;
+  padding-right: calc((1em + 0.75rem) * 3 / 4 + 1.75rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .custom-select:valid:focus, .custom-select.is-valid:focus {
@@ -1187,11 +1189,11 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
 
 .was-validated .form-control:invalid, .was-validated .buttongroup:invalid, .was-validated .bootstrapEditBG:invalid, .form-control.is-invalid, .is-invalid.buttongroup, .is-invalid.bootstrapEditBG {
   border-color: #dc3545;
-  padding-right: 2.25rem;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
   background-repeat: no-repeat;
-  background-position: center right calc(2.25rem / 4);
-  background-size: calc(2.25rem / 2) calc(2.25rem / 2);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+  background-position: center right calc(0.375em + 0.1875rem);
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .form-control:invalid:focus, .was-validated .buttongroup:invalid:focus, .was-validated .bootstrapEditBG:invalid:focus, .form-control.is-invalid:focus, .is-invalid.buttongroup:focus, .is-invalid.bootstrapEditBG:focus {
@@ -1210,14 +1212,14 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
 }
 
 .was-validated textarea.form-control:invalid, .was-validated textarea.buttongroup:invalid, .was-validated textarea.bootstrapEditBG:invalid, textarea.form-control.is-invalid, textarea.is-invalid.buttongroup, textarea.is-invalid.bootstrapEditBG {
-  padding-right: 2.25rem;
-  background-position: top calc(2.25rem / 4) right calc(2.25rem / 4);
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
   border-color: #dc3545;
-  padding-right: 3.4375rem;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") no-repeat center right 1.75rem/1.125rem 1.125rem;
+  padding-right: calc((1em + 0.75rem) * 3 / 4 + 1.75rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") #fff no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
@@ -1347,6 +1349,8 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
   }
   .form-inline .form-check-input {
     position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
     margin-top: 0;
     margin-right: 0.25rem;
     margin-left: 0;
@@ -1381,7 +1385,7 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   .btn, .datepicker-item, .datepicker-panel-item {
     transition: none;
   }
@@ -1399,10 +1403,6 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
 
 .btn.disabled, .btn.datepicker-item-disabled, .datepicker-item-disabled.datepicker-item, .datepicker-item-disabled.datepicker-panel-item, .btn.datepicker-panel-item-disabled, .datepicker-panel-item-disabled.datepicker-item, .datepicker-panel-item-disabled.datepicker-panel-item, .disabled.datepicker-item, .disabled.datepicker-panel-item, .btn:disabled, .datepicker-item:disabled, .datepicker-panel-item:disabled {
   opacity: 0.65;
-}
-
-.btn:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled), .datepicker-item:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled), .datepicker-panel-item:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled) {
-  cursor: pointer;
 }
 
 a.btn.disabled, a.btn.datepicker-item-disabled, a.datepicker-item-disabled.datepicker-item, a.datepicker-item-disabled.datepicker-panel-item, a.btn.datepicker-panel-item-disabled, a.datepicker-panel-item-disabled.datepicker-item, a.datepicker-panel-item-disabled.datepicker-panel-item, a.disabled.datepicker-item, a.disabled.datepicker-panel-item,
@@ -1949,6 +1949,7 @@ fieldset:disabled a.datepicker-panel-item {
 .btn-link {
   font-weight: 400;
   color: #4b7c9a;
+  text-decoration: none;
 }
 
 .btn-link:hover {
@@ -2343,10 +2344,6 @@ input[type="button"].btn-block {
 
 .navbar-toggler:hover, .navbar-toggler:focus {
   text-decoration: none;
-}
-
-.navbar-toggler:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled) {
-  cursor: pointer;
 }
 
 .navbar-toggler-icon {
@@ -2744,7 +2741,6 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  color: inherit;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -2861,51 +2857,29 @@ input[type="button"].btn-block {
     margin-left: 0;
     border-left: 0;
   }
-  .card-group > .card:first-child {
+  .card-group > .card:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:first-child .card-img-top,
-  .card-group > .card:first-child .card-header {
+  .card-group > .card:not(:last-child) .card-img-top,
+  .card-group > .card:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
-  .card-group > .card:first-child .card-img-bottom,
-  .card-group > .card:first-child .card-footer {
+  .card-group > .card:not(:last-child) .card-img-bottom,
+  .card-group > .card:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:last-child {
+  .card-group > .card:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .card-group > .card:last-child .card-img-top,
-  .card-group > .card:last-child .card-header {
+  .card-group > .card:not(:first-child) .card-img-top,
+  .card-group > .card:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
-  .card-group > .card:last-child .card-img-bottom,
-  .card-group > .card:last-child .card-footer {
+  .card-group > .card:not(:first-child) .card-img-bottom,
+  .card-group > .card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
-  }
-  .card-group > .card:only-child {
-    border-radius: 0.25rem;
-  }
-  .card-group > .card:only-child .card-img-top,
-  .card-group > .card:only-child .card-header {
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-  }
-  .card-group > .card:only-child .card-img-bottom,
-  .card-group > .card:only-child .card-footer {
-    border-bottom-right-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
-  }
-  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
-    border-radius: 0;
-  }
-  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
-  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
-  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,
-  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer {
-    border-radius: 0;
   }
 }
 
@@ -2930,31 +2904,31 @@ input[type="button"].btn-block {
   }
 }
 
-.accordion .card {
+.accordion > .card {
   overflow: hidden;
 }
 
-.accordion .card:not(:first-of-type) .card-header:first-child {
+.accordion > .card:not(:first-of-type) .card-header:first-child {
   border-radius: 0;
 }
 
-.accordion .card:not(:first-of-type):not(:last-of-type) {
+.accordion > .card:not(:first-of-type):not(:last-of-type) {
   border-bottom: 0;
   border-radius: 0;
 }
 
-.accordion .card:first-of-type {
+.accordion > .card:first-of-type {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.accordion .card:last-of-type {
+.accordion > .card:last-of-type {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.accordion .card .card-header {
+.accordion > .card .card-header {
   margin-bottom: -1px;
 }
 
@@ -3113,10 +3087,6 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
-.close:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled) {
-  cursor: pointer;
-}
-
 .close:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled):hover, .close:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled):focus {
   opacity: .75;
 }
@@ -3170,7 +3140,7 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
   transform: translate(0, -50px);
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {
     transition: none;
   }
@@ -3181,18 +3151,55 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
   transform: none;
 }
 
+.modal-dialog-scrollable {
+  display: -ms-flexbox;
+  display: flex;
+  max-height: calc(100% - 1rem);
+}
+
+.modal-dialog-scrollable .modal-content {
+  max-height: calc(100vh - 1rem);
+  overflow: hidden;
+}
+
+.modal-dialog-scrollable .modal-header,
+.modal-dialog-scrollable .modal-footer {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.modal-dialog-scrollable .modal-body {
+  overflow-y: auto;
+}
+
 .modal-dialog-centered {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  min-height: calc(100% - (0.5rem * 2));
+  min-height: calc(100% - 1rem);
 }
 
 .modal-dialog-centered::before {
   display: block;
-  height: calc(100vh - (0.5rem * 2));
+  height: calc(100vh - 1rem);
   content: "";
+}
+
+.modal-dialog-centered.modal-dialog-scrollable {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+  max-height: none;
+}
+
+.modal-dialog-centered.modal-dialog-scrollable::before {
+  content: none;
 }
 
 .modal-content {
@@ -3236,7 +3243,7 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid #dee2e6;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
 }
@@ -3266,7 +3273,7 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 1rem;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #dee2e6;
   border-bottom-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
@@ -3292,11 +3299,17 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
     max-width: 500px;
     margin: 1.75rem auto;
   }
+  .modal-dialog-scrollable {
+    max-height: calc(100% - 3.5rem);
+  }
+  .modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 3.5rem);
+  }
   .modal-dialog-centered {
-    min-height: calc(100% - (1.75rem * 2));
+    min-height: calc(100% - 3.5rem);
   }
   .modal-dialog-centered::before {
-    height: calc(100vh - (1.75rem * 2));
+    height: calc(100vh - 3.5rem);
   }
   .modal-sm {
     max-width: 300px;
@@ -3435,7 +3448,7 @@ button.bg-dark:focus {
 }
 
 .text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
 .text-justify {
@@ -3646,6 +3659,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-decoration-none {
   text-decoration: none !important;
+}
+
+.text-break {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 .text-reset {
