@@ -4,8 +4,8 @@
 $list: 1 2 3 4 5 6 7 8 9 10;
 @each $territory in $list {
   .territory#{$territory}{
-    .fc-agenda-view,
-    .fc-month-view {
+    .fc-timeGrid-view,
+    .fc-dayGrid-view {
       .territory#{$territory} {
         // This block specifies events with a territory # inside a calendar that IS that territory
         /* stylelint-disable-next-line declaration-no-important */
@@ -22,8 +22,8 @@ $list: 1 2 3 4 5 6 7 8 9 10;
     }
   }
 
-  .fc-agenda-view,
-  .fc-month-view {
+  .fc-timeGrid-view,
+  .fc-dayGrid-view {
     .territory#{$territory} {
       // This block specifies events with a territory # inside a calendar that is not that territory
       /* stylelint-disable-next-line declaration-no-important */
