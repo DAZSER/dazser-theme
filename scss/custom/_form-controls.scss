@@ -1,39 +1,14 @@
-/* stylelint-disable selector-no-qualifying-type */
+// Form Controls
 
-// .form-group-label{}
-
-/*
-
-select.form-control {
-  // Create them with Custom Select options
-  //@extend .custom-select;
-  //height: $input-height-sm;
-  .table-sm & {
-    // Override margin's for inside tables
-    //margin-top: -.2rem;
-    //margin-bottom: .1rem;
-  }
-  &[multiple] {
-    //height: auto;
-    //background: none;
+.form-control {
+  &:focus{
+    border-color: var(--primary);
+    box-shadow: 0 0 0 .2rem var(--primary) !important;
   }
 }
 
-input{
-  &[type="checkbox"] {
-    & + label{
-      //margin-bottom: .1rem;
-    }
-  }
-}
-select{
-  &.form-control-sm {
-    //margin-top: -.1rem;
-  }
-}
+.vertical-list {
+  &-item {
 
-.form-inline {
-  //display: inline-flex;
+  }
 }
-*/
-/* stylelint-enable selector-no-qualifying-type */

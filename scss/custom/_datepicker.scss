@@ -47,8 +47,6 @@
     .datepicker-item {
       @extend .btn-success;
     }
-    //@include button-variant($white, lighten($orange, 30%), $orange);
-    //color: $black;
   }
 
   &-weeks-of-year {

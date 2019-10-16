@@ -3,31 +3,25 @@
   // These are supposed to be bootstrap's input group's, but it works better with button groups
   @extend .form-control;
   @extend .form-control-sm;
-  // Override the inline-block of Alpha in order to get border-radius
-  // BUG: Overrides the hidden fields
-  /* stylelint-disable-next-line declaration-no-important */
-  //display: inline-block !important;
   // Remove double padding from nested inputs.
   padding: 0;
-  &-focus{
-    // The following :focus event is ripped directly from node_modules\bootstrap\scss\mixins\_forms.scss
-    // I had to pull it out of the mixin because the mixin added :focus
-    color: $input-focus-color;
-    background-color: $input-focus-bg;
-    border-color: $input-focus-border-color;
-    outline: 0;
-    // Avoid using mixin so we can pass custom focus shadow properly
-    @if $enable-shadows {
-      box-shadow: $input-box-shadow, $input-focus-box-shadow;
-    } @else {
-      box-shadow: $input-focus-box-shadow;
-    }
+
+  // Use a box shadow instead of a border so I can use border-radius;
+  @include border-radius(.2rem);
+  border-style: hidden;
+  box-shadow: 0 0 0 1px var(--dark-border-color);
+
+  &-focus,
+  &:focus {
+    @extend .form-control:focus;
   }
+
   &-button{
     // This vertically centers the calendar button
     /* stylelint-disable-next-line declaration-no-important */
     padding-top: 2px !important;
   }
+
   &-input {
     // Make sure we have spacing inside the input
     padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
@@ -65,9 +59,9 @@
   }
   @at-root .table-inverse & {
     background-color: transparent;
-    border-color: color-yiq(theme-color("primary"));
+    border-color: var(--primary-text);
     input {
-      color: color-yiq(theme-color("primary"));
+      color: var(--primary);
       background-color: transparent;
     }
   }
@@ -82,4 +76,12 @@
 // Add buttongroup to legacy bg
 .bootstrapEditBG{
   @extend .buttongroup;
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    input {
+      @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+    }
+  }
 }

@@ -1,13 +1,12 @@
 .tab{
   &-band {
     @extend .nav-tabs;
-    margin-bottom: $spacer/4;
   }
 
   &-item{
     @extend .nav-link;
-    padding: .1rem;
-    margin-right: .2rem; //$nav-item-margin;
+    padding: $spacer / 4;
+    margin-right: var(--padding);
     margin-bottom: -$nav-tabs-border-width;
     white-space: nowrap;
     background-color: $nav-tabs-link-active-bg;
@@ -16,6 +15,12 @@
     @include hover-focus {
       border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $white;
     }
+
+    &:hover{
+      color: $nav-tabs-link-active-color;
+      background-color: var(--light);
+    }
+
     .icon {
       width: 12px;
       height: 12px;
@@ -23,9 +28,13 @@
 
     &--selected,
     &--selected:hover{
+      font-weight: var(--font-weight-bold);
       color: $nav-tabs-link-active-color;
+      background-color: var(--light);
       /* stylelint-disable-next-line declaration-no-important */
       border-color: $nav-tabs-link-active-border-color !important;
+      /* stylelint-disable-next-line declaration-no-important */
+      border-bottom-color: var(--light) !important;
     }
 
     &--disabled,
@@ -42,7 +51,7 @@
   &-button,
   &-button--disabled{
     margin-right: 0;
-    margin-bottom: $spacer/4;
+    margin-bottom: $spacer / 4;
     &:hover{
       border: $nav-tabs-border-width solid transparent;
       border-bottom-color: $nav-tabs-border-color;
@@ -60,10 +69,15 @@
     @extend .tab-item;
     /* stylelint-disable-next-line declaration-no-important */
     display: inline-block !important;
+    color: var(--primary-text);
   }
   .bootstarpTabTPanes {
     @extend .tab-pane;
   }
+}
+
+#tbi\.TABBAND\.TABTABLE {
+  margin-left: var(--padding);
 }
 
 @media print {

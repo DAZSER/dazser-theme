@@ -5,12 +5,15 @@
     max-width: inherit !important;
     /* stylelint-disable-next-line declaration-no-important */
     margin: inherit !important;
+
+    box-shadow: $box-shadow;
+
   }
   &-adjustment {
     // This is a class that get's added on when resizing or moving the modal
     // This is stolen from .modal-dialog
     background: rgba(255, 255, 255, $modal-backdrop-opacity);
-    border: $modal-content-border-width*2 solid $modal-content-border-color;
+    border: $modal-content-border-width * 2 solid $modal-content-border-color;
     @include border-radius($border-radius-lg);
     @include box-shadow($modal-content-box-shadow-xs);
     .modal-content {
@@ -19,6 +22,10 @@
     }
   }
   &-header {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--primary);
+
     span {
       // Hack to add .modal-title to the span inside of the modal-header
       @extend .modal-title;
@@ -26,7 +33,8 @@
   }
   &-content {
     // Set the max height of content
-    max-height: 85vh;
+    max-height: 98vh;
+    padding: var(--padding);
   }
   &-body{
     // Push up body 12px for resizer

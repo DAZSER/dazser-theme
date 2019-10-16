@@ -1,7 +1,7 @@
 // Color overrides
 // This loop creates 10 class pairs
 // only for agenda-view and month-view
-$list: 1 2 3 4 5 6 7 8 9 10;
+$list: 1 2 3 4 5 6 7 8 9 10 !default;
 @each $territory in $list {
   .territory#{$territory}{
     .fc-timeGrid-view,
@@ -9,16 +9,16 @@ $list: 1 2 3 4 5 6 7 8 9 10;
       .territory#{$territory} {
         // This block specifies events with a territory # inside a calendar that IS that territory
         /* stylelint-disable-next-line declaration-no-important */
-        background-color: theme-color("success") !important;
+        background-color: var(--success) !important;
         /* stylelint-disable-next-line declaration-no-important */
-        border-color: theme-color("success") !important;
+        border-color: var(--success) !important;
       }
     }
 
     .fc-event {
       // This block specifies events WITHOUT a territory #
-      background-color: theme-color("primary");
-      border-color: theme-color("primary");
+      background-color: var(--primary);
+      border-color: var(--primary);
     }
   }
 
@@ -27,22 +27,22 @@ $list: 1 2 3 4 5 6 7 8 9 10;
     .territory#{$territory} {
       // This block specifies events with a territory # inside a calendar that is not that territory
       /* stylelint-disable-next-line declaration-no-important */
-      background-color: theme-color("secondary") !important;
+      background-color: var(--secondary) !important;
       /* stylelint-disable-next-line declaration-no-important */
-      border-color: theme-color("secondary") !important;
+      border-color: var(--secondary) !important;
     }
   }
 }
 
 .territory-event {
   /* stylelint-disable-next-line declaration-no-important */
-  background-color: theme-color("success") !important;
+  background-color: var(--success) !important;
   /* stylelint-disable-next-line declaration-no-important */
-  border-color: theme-color("success") !important;
+  border-color: var(--success) !important;
 }
 .non-territory-event {
   /* stylelint-disable-next-line declaration-no-important */
-  background-color: theme-color("secondary") !important;
+  background-color: var(--secondary) !important;
   /* stylelint-disable-next-line declaration-no-important */
-  border-color: theme-color("secondary") !important;
+  border-color: var(--secondary) !important;
 }

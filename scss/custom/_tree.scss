@@ -18,15 +18,15 @@
     }
     &-hover{
       a {
-        color: theme-color("primary");
+        color: var(--primary-text);
       }
       background-color: gray("300");
     }
     &-selected {
-      color: color-yiq(theme-color("primary"));
-      background: theme-color("primary");
+      color: var(--primary-text);
+      background: var(--primary);
       a {
-        color: color-yiq(theme-color("primary"));
+        color: var(--primary-text);
       }
       .icon {
         fill: gray("300");

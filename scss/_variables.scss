@@ -1,5 +1,23 @@
-$primary: #4b7c9a;
-$secondary: #767676;
+// Override Bootstrap colors
+$primary: #4cc1ea !default;
+$secondary: #767676 !default;
+$input-border-color: var(--gray-dark) !default;
+
+// These are to load them into :root
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: (
+  "primary-text": #1c2833,
+  "background": #e9ecef,
+  "dark-border-color": #343a40,
+  "light-border-color": #e9ecef
+);
+
+// Other Root additions
+:root {
+  --padding: .2rem;
+  --font-size-lg: 1.2rem;
+  --font-weight-bold: 600;
+}
 
 /*
 $border-width
@@ -21,7 +39,6 @@ $card-spacer-x
 $card-spacer-y
 $modal-content-bg
 $form-text-margin-top
-$jumbotron-bg
 $input-btn-padding-x-sm
-
+$spacer
 */

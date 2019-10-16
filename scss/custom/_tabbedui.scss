@@ -4,26 +4,29 @@
 .sidebar {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  background-color: $jumbotron-bg;
+  background-color: var(--background);
   &-left{
-    border-right: $border-width solid $border-color;
+    border-right: $border-width solid var(--background);
   }
   &-right{
-    border-left: $border-width solid $border-color;
+    border-left: $border-width solid var(--background);
   }
 }
 
 .navbar {
   &-header {
     display: inherit;
-    background-color: theme-color("primary");
+    font-weight: var(--font-weight-lg);
+    background-color: var(--primary);
     @include box-shadow($modal-content-box-shadow-xs);
     a{
-      color: color-yiq(theme-color("primary"));
+      font-weight: var(--font-weight-bold);
+      color: var(--primary-text);
     }
   }
   &-footer {
     //nothing
+    @extend .invisible;
   }
 }
 

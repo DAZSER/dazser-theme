@@ -1,11 +1,11 @@
-$black: #000;
-$dark-grey: #424242; /* MD Grey 800 */
-$grey: #9e9e9e; /* MD Grey 500 */
-$light-grey: #eee; /* MD Grey 200 */
-$white: #fff;
+$black: #000 !default;
+$dark-grey: #424242 !default; /* MD Grey 800 */
+$grey: #9e9e9e !default; /* MD Grey 500 */
+$light-grey: #eee !default; /* MD Grey 200 */
+$white: #fff !default;
 
-$warn: #ffeb3b; /* MD Yellow 500 */
-$error: #e57373; /* MD Red 300 */
+$warn: #ffeb3b !default; /* MD Yellow 500 */
+$error: #e57373 !default; /* MD Red 300 */
 
 /* normalize.css */
 body { margin: 0; }

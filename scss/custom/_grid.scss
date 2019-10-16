@@ -4,14 +4,20 @@
     // I had to pull them this way because Alpha doesn't use <thead> for Grids
     // .table thead th
     // .thead-light { th
-    color: $table-head-color;
+    color: var(--primary-text);
     vertical-align: bottom;
-    background-color: $table-head-bg;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    background-color: var(--primary);
+    a {
+      color: var(--primary-text);
+    }
   }
 
   &-footer {
     @extend .font-weight-bold;
+
+    // This overrides the table styles for the footer (because of specificty, _tables won
+    padding-bottom: var(--padding) !important;
+
     .form-control {
       // This overrides block styling for footer inputs and selects
       display: inline-block;
@@ -19,11 +25,20 @@
     }
   }
 
+  &-hover{
+    color: $table-hover-color;
+    background-color: $table-hover-bg;
+  }
+
   &-dv{
     //&-label{}
+
+    @extend .card;
+    box-shadow: $box-shadow;
+
     &-data{
       font-size: .875rem;
-      font-weight: $headings-font-weight;
+      font-weight: var(--font-weight-bold);
       label {
         //Don't wrap Lables
         white-space: nowrap;
@@ -42,23 +57,38 @@
 }
 
 .table {
-  margin-bottom: 0;
+
+  background-color: var(--light);
+  box-shadow: $box-shadow;
+
   .grid-cell {
     // Use this to pinpoint items inside of cells!
     // This is mainly used to fix spacing
     .buttongroup {
       //Need to move them closer, so I have to use negative margins
-      margin-top: -.2rem;
+      margin-top: -var(--padding);
       margin-bottom: -.3rem;
     }
     .btn {
-      margin-top: -.2rem;
+      margin-top: -var(--padding);
       margin-bottom: .1rem;
     }
     select {
       margin-bottom: .1rem;
     }
   }
+
+  th,
+  td {
+    // Don't put a border on the top of the data cell
+    border: 0;
+  }
+
+  // Target boxes with Range in the search part
+  td[valign="bottom"] {
+    padding-top: 0;
+  }
+
   &-sm th,
   &-sm td {
     padding-bottom: 0;
@@ -81,11 +111,11 @@
 }
 
 .table-inverse {
-  color: color-yiq(theme-color("primary"));
-  background-color: theme-color("primary");
+  color: var(--primary-text);
+  background-color: var(--primary);
   a {
-    color: color-yiq(theme-color("primary"));
-    background-color: theme-color("primary");
+    color: var(--primary-text);
+    background-color: var(--primary);
   }
   & td,
   & th,
@@ -93,6 +123,6 @@
     border-color: $table-border-color;
   }
   .btn {
-    border: $border-width solid color-yiq(theme-color("primary"));
+    border: $border-width solid var(--primary);
   }
 }

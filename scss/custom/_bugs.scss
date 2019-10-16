@@ -8,7 +8,8 @@
 
 /* stylelint-disable-next-line selector-max-id */
 .bootstrapFooterTD,
-#tbi.DIVIDER{
+#tbi.DIVIDER,
+.bootstrapEditBGSeparator{
   //Hide all Divider's
   @extend .invisible;
 }
@@ -21,17 +22,13 @@
   float: left !important;
   width: 100%;
   /* stylelint-disable-next-line declaration-no-important */
-  padding: .1rem .1rem !important;
+  padding: var(--padding) !important;
   & & {
     // When it's nested, remove the top padding
     /* stylelint-disable-next-line declaration-no-important */
-    padding-top: 0 !important;
+    // padding-top: 0 !important;
   }
 }
-
-//.row div {
-//  width: 100%;
-//}
 
 /* stylelint-disable-next-line selector-max-id */
 #LOG\.MASTERTEMPLATE,
