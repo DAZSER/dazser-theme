@@ -1,0 +1,99 @@
+.list {
+
+  width: 100%;
+  margin-bottom: $spacer;
+  color: $table-color;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  border: $table-border-width solid $table-border-color;
+
+  &-focus{}
+  &-disabled {}
+  &-lock {}
+  &-header {
+    padding: $table-cell-padding-sm;
+    color: $table-head-color;
+    vertical-align: bottom;
+    background-color: $table-head-bg;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+  &-footer { padding: $table-cell-padding-sm; }
+  &-content {
+    &-header { padding: $table-cell-padding-sm; }
+    &-footer { padding: $table-cell-padding-sm; }
+  }
+  &-navigator{
+    padding: $table-cell-padding-sm;
+    color: var(--secondary);
+    text-overflow: ellipsis;
+    background-color: var(--secondary);
+    @extend .rounded;
+
+    &-focus {
+
+    }
+  }
+  &-column{
+    // This is the header column!
+
+    color: var(--primary-text);
+    background-color: var(--primary);
+
+    &-item{
+      padding: $table-cell-padding-sm;
+      vertical-align: bottom;
+
+      &-hover{}
+    }
+    &-order{
+      &-icon{}
+    }
+    &-resizing{
+      &-handle{}
+    }
+    &-data{
+
+    }
+  }
+  &-row{
+    padding: $table-cell-padding-sm;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+
+    &-hover{
+      color: $table-hover-color;
+      background-color: $table-hover-bg;
+    }
+    &-selected{
+      color: color-yiq(theme-color("secondary"));
+      background-color: var(--secondary);
+    }
+    &-title{
+      padding: ($table-cell-padding-sm / 2);
+      color: $table-hover-color;
+      background-color: $table-hover-bg;
+    }
+    &-separator{}
+  }
+  &-part{
+    &-main{
+      font-weight: var(--font-weight-bold);
+    }
+    &-sub{
+      font-size: $font-size-sm;
+      font-variant: small-caps;
+    }
+    &-context{}
+    &-detail{
+      border: $table-border-width solid $table-hover-bg;
+    }
+    &-content{}
+  }
+  &-prev{
+    @extend .btn;
+    &-active{ @extend .active; }
+  }
+  &-next{
+    @extend .btn;
+    &-active{ @extend .active; }
+  }
+}
