@@ -8,29 +8,30 @@
     "css": "npm-run-all --parallel css:lint css:compile-theme css:compile-table --sequential css:prefix --parallel css:minify-theme css:minify-table",
     "css:lint": "stylelint --config .stylelintrc --syntax scss \"scss/**/*.scss\"",
     "css:compile-theme": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/dazser-theme.scss dist/dazser-theme.css",
+    "css:debug": "node-sass --output-style expanded --source-map true --source-map-embed true --source-map-contents true --precision 6 scss/dazser-theme.scss dist/dazser-theme.css",
     "css:compile-table": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/table.scss dist/table.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "css:minify-theme": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/dazser-theme.min.css dist/dazser-theme.css",
     "css:minify-table": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/table.min.css dist/table.css",
     "clean": "rm -rf dist/**",
-    "test": "npm run start"
+    "test": "npm-run-all --sequential clean css:lint css:debug css:prefix"
   },
   "author": "Kyle McNally",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.5",
     "bootstrap": "^4.3.1",
     "clean-css-cli": "^4.3.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^6.1.3",
     "postcss-page-break": "^2.0.0",
     "postcss-remove-prefixes": "^1.2.0",
-    "stylelint": "^10.0.1",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-order": "^3.0.0",
-    "stylelint-scss": "^3.6.1"
+    "stylelint": "^11.1.1",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-config-twbs-bootstrap": "^0.7.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-scss": "^3.11.1"
   },
   "browserslist": [
     "last 1 major version",
