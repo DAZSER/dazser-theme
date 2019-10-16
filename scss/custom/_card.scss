@@ -1,26 +1,42 @@
 .card {
   //Accordion's are also used as the Frame's in Dialogs.
   // Don't show the border to reduce 'blockiness'
-  border: 0;
+  padding: var(--padding);
+  border: $border-width solid var(--light-border-color);
+  box-shadow: $box-shadow;
+
   &-body {
-    padding: .2rem;
+    padding: var(--padding);
+
+    br {
+      // Hide extra spacing
+      // It's nice, but it causes problems
+      // @extend .invisible;
+    }
+
     & & {
       //Remove Card Border from cards within cards
       border: $border-width solid transparent;
+    }
+
+    .row {
+
     }
   }
 
   &-header {
     // Aligns the title
-    padding-left: .5rem;
+    padding: $spacer / 2;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
   }
 
   &-title{
     &-selected{
-      color: color-yiq(theme-color("primary"));
-      background-color: theme-color("primary");
+      color: var(--primary-text);
+      background-color: var(--primary);
       &:hover{
-        color: color-yiq(theme-color("primary"));
+        color: var(--primary-text);
       }
     }
     &-disabled {
