@@ -5410,6 +5410,11 @@ span.grid-dv-data {
   border-top: 0;
 }
 
+.table-clean {
+  background-color: inherit;
+  box-shadow: none;
+}
+
 .table-inverse {
   color: var(--primary-text);
   background-color: var(--primary);
