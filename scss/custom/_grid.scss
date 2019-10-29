@@ -108,6 +108,12 @@
   //    }
   //  }
   //}
+
+  &-clean {
+    // This is to clear out the box shadow and the background;
+    background-color: inherit;
+    box-shadow: none;
+  }
 }
 
 .table-inverse {
