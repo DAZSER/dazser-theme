@@ -54,11 +54,6 @@ html {
   .page {
     width: 100%;
     padding: 0; /* Remove all Margin and Padding from the page */
-
-    /* BUG FIX: Need some margin (or padding) on the .page element
-       in order to 'make it a box' on Firefox, no ill effects on Chrome
-       https://bugzilla.mozilla.org/show_bug.cgi?id=1470436 */
-    margin: 1px;
     break-after: page; /* Make sure to break after each .page div */
   }
 
