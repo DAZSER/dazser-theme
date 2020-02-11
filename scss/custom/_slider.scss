@@ -1,0 +1,99 @@
+.slider {
+  height: var(--slider-size);
+  cursor: default;
+  &Inner {
+    height: calc(var(--slider-size) / 5);
+    margin: calc((var(--slider-size) / 2));
+    background: var(--secondary);
+    border-radius: calc(var(--slider-size) / 10);
+  }
+  &Range {
+    height: calc(var(--slider-size) / 5 + 2px);
+    margin-top: -1px;
+    background: var(--primary);
+    border-radius: 3px;
+    &Hover { }
+    &Selected { }
+  }
+  &Handle {
+    width: var(--slider-size);
+    height: var(--slider-size);
+    margin-top: calc((var(--slider-size) / 2.5) * -1);
+    margin-left: calc((var(--slider-size) / 2.5) * -1);
+    background: var(--primary);
+    border: 1px solid var(--secondary);
+    border-radius: calc(var(--slider-size) / 2 + 2px);
+    &Hover { }
+    &Selected { }
+    &Min {}
+    &Max {}
+  }
+  &Disabled {
+    .sliderHandle { }
+    .sliderRange,
+    .sliderInner { }
+  }
+}
+
+.pulse {
+  .sliderHandle { }
+  .sliderHandle:active { }
+}
+
+/* .listItemSelected,
+.listItemHover,
+.gridRowSelected,
+.gridRowHover {
+  .sliderInner {
+    background: $accentForeTransColor;
+  }
+  .sliderRange {
+    background: $accentForeTransColor;
+  }
+  .sliderHandle {
+    background: $accentLightColor;
+    border-color: $accentForeColor;
+  }
+  .sliderHandleHover {
+    background: $accentForeColor;
+    border-color: $accentForeTransColor;
+  }
+  .sliderHandleSelected {
+    background: $accentForeColor;
+  }
+  .sliderDisabled {
+    &.slider {
+      opacity: .4;
+    }
+    .sliderHandle {
+      background: $accentLightColor;
+      border-color: $accentForeTransColor;
+    }
+    .sliderRange {
+      background: transparent;
+    }
+    .sliderInner {
+      background: $accentForeTransColor;
+    }
+  }
+}
+
+.compact {
+  .slider {
+    height: calc(var(--slider-size) / 2);
+  }
+  .sliderInner {
+    height: 2px;
+    margin: ((calc(var(--slider-size) / 2) / 2) - 2px);
+  }
+  .sliderRange {
+    height: 4px;
+  }
+  .sliderHandle {
+    width: calc(var(--slider-size) / 2);
+    height: calc(var(--slider-size) / 2);
+    margin-top: -calc(var(--slider-size) / 2) / 2;
+    margin-left: -calc(var(--slider-size) / 2) / 2;
+  }
+}
+*/
