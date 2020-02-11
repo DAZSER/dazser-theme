@@ -34,14 +34,8 @@
     "stylelint-scss": "^3.14.2"
   },
   "browserslist": [
-    "last 1 major version",
-    ">= 3%",
-    "Chrome >= 60",
-    "Firefox >= 60",
-    "Edge >= 12",
-    "Explorer >= 11",
-    "iOS >= 9",
-    "Safari >= 9",
-    "Android >= 6"
+    "Chrome >= 72",
+    "Firefox >= 68",
+    "Edge >= 17"
   ]
 }
