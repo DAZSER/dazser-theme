@@ -27,7 +27,7 @@
     "postcss-cli": "^7.1.0",
     "postcss-page-break": "^2.0.0",
     "postcss-remove-prefixes": "^1.2.0",
-    "stylelint": "^13.1.0",
+    "stylelint": "^13.2.0",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-twbs-bootstrap": "^2.0.1",
     "stylelint-order": "^4.0.0",
