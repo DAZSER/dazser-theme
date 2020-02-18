@@ -41,6 +41,9 @@
       background-color: $input-disabled-bg;
     }
   }
+  input{
+    border: 0;
+  }
   th,
   td {
     // The following removed the border and padding from interior table cells
