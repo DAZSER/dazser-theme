@@ -5326,6 +5326,10 @@ span.grid-dv-data {
   background-color: #e9ecef;
 }
 
+.buttongroup input, .bootstrapEditBG input {
+  border: 0;
+}
+
 .buttongroup th, .bootstrapEditBG th,
 .buttongroup td,
 .bootstrapEditBG td {
