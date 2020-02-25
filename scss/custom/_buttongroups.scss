@@ -14,6 +14,12 @@
   &-focus,
   &:focus {
     @extend .form-control:focus;
+    input {
+      &:focus {
+        // I don't want it to highlight on :focus
+        box-shadow: none !important;
+      }
+    }
   }
 
   &-button{
