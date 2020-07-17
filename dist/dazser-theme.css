@@ -211,6 +211,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
+  -ms-overflow-style: scrollbar;
 }
 
 figure {
@@ -278,6 +279,10 @@ select {
   text-transform: none;
 }
 
+[role="button"] {
+  cursor: pointer;
+}
+
 select {
   word-wrap: normal;
 }
@@ -308,13 +313,6 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
-}
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
 }
 
 textarea {
@@ -984,6 +982,21 @@ mark,
   opacity: 1;
 }
 
+input[type="date"].form-control, input.buttongroup[type="date"], input.bootstrapEditBG[type="date"],
+input[type="time"].form-control,
+input.buttongroup[type="time"],
+input.bootstrapEditBG[type="time"],
+input[type="datetime-local"].form-control,
+input.buttongroup[type="datetime-local"],
+input.bootstrapEditBG[type="datetime-local"],
+input[type="month"].form-control,
+input.buttongroup[type="month"],
+input.bootstrapEditBG[type="month"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 select.form-control:focus::-ms-value, select.buttongroup:focus::-ms-value, select.bootstrapEditBG:focus::-ms-value, select.buttongroup-focus::-ms-value {
   color: #495057;
   background-color: #fff;
@@ -1381,7 +1394,6 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
   color: #212529;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -1412,6 +1424,10 @@ textarea.form-control, textarea.buttongroup, textarea.bootstrapEditBG {
 
 .btn.disabled, .btn.datepicker-item-disabled, .datepicker-item-disabled.datepicker-item, .datepicker-item-disabled.datepicker-panel-item, .datepicker-item-disabled.list-prev, .datepicker-item-disabled.list-next, .btn.datepicker-panel-item-disabled, .datepicker-panel-item-disabled.datepicker-item, .datepicker-panel-item-disabled.datepicker-panel-item, .datepicker-panel-item-disabled.list-prev, .datepicker-panel-item-disabled.list-next, .disabled.datepicker-item, .disabled.datepicker-panel-item, .disabled.list-prev, .disabled.list-next, .btn:disabled, .datepicker-item:disabled, .datepicker-panel-item:disabled, .list-prev:disabled, .list-next:disabled {
   opacity: 0.65;
+}
+
+.btn:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled), .datepicker-item:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled), .datepicker-panel-item:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled), .list-prev:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled), .list-next:not(:disabled):not(.disabled):not(.datepicker-item-disabled):not(.datepicker-panel-item-disabled) {
+  cursor: pointer;
 }
 
 a.btn.disabled, a.btn.datepicker-item-disabled, a.datepicker-item-disabled.datepicker-item, a.datepicker-item-disabled.datepicker-panel-item, a.datepicker-item-disabled.list-prev, a.datepicker-item-disabled.list-next, a.btn.datepicker-panel-item-disabled, a.datepicker-panel-item-disabled.datepicker-item, a.datepicker-panel-item-disabled.datepicker-panel-item, a.datepicker-panel-item-disabled.list-prev, a.datepicker-panel-item-disabled.list-next, a.disabled.datepicker-item, a.disabled.datepicker-panel-item, a.disabled.list-prev, a.disabled.list-next,
@@ -2270,7 +2286,6 @@ fieldset:disabled a.list-next {
 
 .btn-link:focus, .btn-link.focus {
   text-decoration: underline;
-  box-shadow: none;
 }
 
 .btn-link:disabled, .btn-link.disabled, .btn-link.datepicker-item-disabled, .btn-link.datepicker-panel-item-disabled {
@@ -2919,7 +2934,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-light .navbar-text {
@@ -2992,7 +3007,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-dark .navbar-text {
@@ -3024,14 +3039,21 @@ input[type="button"].btn-block {
   margin-left: 0;
 }
 
-.card > .list-group:first-child .list-group-item:first-child, .grid-dv > .list-group:first-child .list-group-item:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+.card > .list-group, .grid-dv > .list-group {
+  border-top: inherit;
+  border-bottom: inherit;
 }
 
-.card > .list-group:last-child .list-group-item:last-child, .grid-dv > .list-group:last-child .list-group-item:last-child {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+.card > .list-group:first-child, .grid-dv > .list-group:first-child {
+  border-top-width: 0;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card > .list-group:last-child, .grid-dv > .list-group:last-child {
+  border-bottom-width: 0;
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
 .card-body {
@@ -3430,6 +3452,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
+  border-radius: 0.25rem;
 }
 
 .list-group-item-action {
@@ -3459,13 +3482,13 @@ input[type="button"].btn-block {
 }
 
 .list-group-item:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .list-group-item:last-child {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
 }
 
 .list-group-item.disabled, .list-group-item.datepicker-item-disabled, .list-group-item.datepicker-panel-item-disabled, .list-group-item:disabled {
@@ -3494,26 +3517,26 @@ input[type="button"].btn-block {
   flex-direction: row;
 }
 
-.list-group-horizontal .list-group-item:first-child {
+.list-group-horizontal > .list-group-item:first-child {
   border-bottom-left-radius: 0.25rem;
   border-top-right-radius: 0;
 }
 
-.list-group-horizontal .list-group-item:last-child {
+.list-group-horizontal > .list-group-item:last-child {
   border-top-right-radius: 0.25rem;
   border-bottom-left-radius: 0;
 }
 
-.list-group-horizontal .list-group-item.active, .list-group-horizontal .list-group-item.list-prev-active, .list-group-horizontal .list-group-item.list-next-active {
+.list-group-horizontal > .list-group-item.active, .list-group-horizontal > .list-group-item.list-prev-active, .list-group-horizontal > .list-group-item.list-next-active {
   margin-top: 0;
 }
 
-.list-group-horizontal .list-group-item + .list-group-item {
+.list-group-horizontal > .list-group-item + .list-group-item {
   border-top-width: 1px;
   border-left-width: 0;
 }
 
-.list-group-horizontal .list-group-item + .list-group-item.active, .list-group-horizontal .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal .list-group-item + .list-group-item.list-next-active {
+.list-group-horizontal > .list-group-item + .list-group-item.active, .list-group-horizontal > .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal > .list-group-item + .list-group-item.list-next-active {
   margin-left: -1px;
   border-left-width: 1px;
 }
@@ -3522,22 +3545,22 @@ input[type="button"].btn-block {
   .list-group-horizontal-sm {
     flex-direction: row;
   }
-  .list-group-horizontal-sm .list-group-item:first-child {
+  .list-group-horizontal-sm > .list-group-item:first-child {
     border-bottom-left-radius: 0.25rem;
     border-top-right-radius: 0;
   }
-  .list-group-horizontal-sm .list-group-item:last-child {
+  .list-group-horizontal-sm > .list-group-item:last-child {
     border-top-right-radius: 0.25rem;
     border-bottom-left-radius: 0;
   }
-  .list-group-horizontal-sm .list-group-item.active, .list-group-horizontal-sm .list-group-item.list-prev-active, .list-group-horizontal-sm .list-group-item.list-next-active {
+  .list-group-horizontal-sm > .list-group-item.active, .list-group-horizontal-sm > .list-group-item.list-prev-active, .list-group-horizontal-sm > .list-group-item.list-next-active {
     margin-top: 0;
   }
-  .list-group-horizontal-sm .list-group-item + .list-group-item {
+  .list-group-horizontal-sm > .list-group-item + .list-group-item {
     border-top-width: 1px;
     border-left-width: 0;
   }
-  .list-group-horizontal-sm .list-group-item + .list-group-item.active, .list-group-horizontal-sm .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-sm .list-group-item + .list-group-item.list-next-active {
+  .list-group-horizontal-sm > .list-group-item + .list-group-item.active, .list-group-horizontal-sm > .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-sm > .list-group-item + .list-group-item.list-next-active {
     margin-left: -1px;
     border-left-width: 1px;
   }
@@ -3547,22 +3570,22 @@ input[type="button"].btn-block {
   .list-group-horizontal-md {
     flex-direction: row;
   }
-  .list-group-horizontal-md .list-group-item:first-child {
+  .list-group-horizontal-md > .list-group-item:first-child {
     border-bottom-left-radius: 0.25rem;
     border-top-right-radius: 0;
   }
-  .list-group-horizontal-md .list-group-item:last-child {
+  .list-group-horizontal-md > .list-group-item:last-child {
     border-top-right-radius: 0.25rem;
     border-bottom-left-radius: 0;
   }
-  .list-group-horizontal-md .list-group-item.active, .list-group-horizontal-md .list-group-item.list-prev-active, .list-group-horizontal-md .list-group-item.list-next-active {
+  .list-group-horizontal-md > .list-group-item.active, .list-group-horizontal-md > .list-group-item.list-prev-active, .list-group-horizontal-md > .list-group-item.list-next-active {
     margin-top: 0;
   }
-  .list-group-horizontal-md .list-group-item + .list-group-item {
+  .list-group-horizontal-md > .list-group-item + .list-group-item {
     border-top-width: 1px;
     border-left-width: 0;
   }
-  .list-group-horizontal-md .list-group-item + .list-group-item.active, .list-group-horizontal-md .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-md .list-group-item + .list-group-item.list-next-active {
+  .list-group-horizontal-md > .list-group-item + .list-group-item.active, .list-group-horizontal-md > .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-md > .list-group-item + .list-group-item.list-next-active {
     margin-left: -1px;
     border-left-width: 1px;
   }
@@ -3572,22 +3595,22 @@ input[type="button"].btn-block {
   .list-group-horizontal-lg {
     flex-direction: row;
   }
-  .list-group-horizontal-lg .list-group-item:first-child {
+  .list-group-horizontal-lg > .list-group-item:first-child {
     border-bottom-left-radius: 0.25rem;
     border-top-right-radius: 0;
   }
-  .list-group-horizontal-lg .list-group-item:last-child {
+  .list-group-horizontal-lg > .list-group-item:last-child {
     border-top-right-radius: 0.25rem;
     border-bottom-left-radius: 0;
   }
-  .list-group-horizontal-lg .list-group-item.active, .list-group-horizontal-lg .list-group-item.list-prev-active, .list-group-horizontal-lg .list-group-item.list-next-active {
+  .list-group-horizontal-lg > .list-group-item.active, .list-group-horizontal-lg > .list-group-item.list-prev-active, .list-group-horizontal-lg > .list-group-item.list-next-active {
     margin-top: 0;
   }
-  .list-group-horizontal-lg .list-group-item + .list-group-item {
+  .list-group-horizontal-lg > .list-group-item + .list-group-item {
     border-top-width: 1px;
     border-left-width: 0;
   }
-  .list-group-horizontal-lg .list-group-item + .list-group-item.active, .list-group-horizontal-lg .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-lg .list-group-item + .list-group-item.list-next-active {
+  .list-group-horizontal-lg > .list-group-item + .list-group-item.active, .list-group-horizontal-lg > .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-lg > .list-group-item + .list-group-item.list-next-active {
     margin-left: -1px;
     border-left-width: 1px;
   }
@@ -3597,38 +3620,36 @@ input[type="button"].btn-block {
   .list-group-horizontal-xl {
     flex-direction: row;
   }
-  .list-group-horizontal-xl .list-group-item:first-child {
+  .list-group-horizontal-xl > .list-group-item:first-child {
     border-bottom-left-radius: 0.25rem;
     border-top-right-radius: 0;
   }
-  .list-group-horizontal-xl .list-group-item:last-child {
+  .list-group-horizontal-xl > .list-group-item:last-child {
     border-top-right-radius: 0.25rem;
     border-bottom-left-radius: 0;
   }
-  .list-group-horizontal-xl .list-group-item.active, .list-group-horizontal-xl .list-group-item.list-prev-active, .list-group-horizontal-xl .list-group-item.list-next-active {
+  .list-group-horizontal-xl > .list-group-item.active, .list-group-horizontal-xl > .list-group-item.list-prev-active, .list-group-horizontal-xl > .list-group-item.list-next-active {
     margin-top: 0;
   }
-  .list-group-horizontal-xl .list-group-item + .list-group-item {
+  .list-group-horizontal-xl > .list-group-item + .list-group-item {
     border-top-width: 1px;
     border-left-width: 0;
   }
-  .list-group-horizontal-xl .list-group-item + .list-group-item.active, .list-group-horizontal-xl .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-xl .list-group-item + .list-group-item.list-next-active {
+  .list-group-horizontal-xl > .list-group-item + .list-group-item.active, .list-group-horizontal-xl > .list-group-item + .list-group-item.list-prev-active, .list-group-horizontal-xl > .list-group-item + .list-group-item.list-next-active {
     margin-left: -1px;
     border-left-width: 1px;
   }
 }
 
-.list-group-flush .list-group-item {
-  border-right-width: 0;
-  border-left-width: 0;
+.list-group-flush {
   border-radius: 0;
 }
 
-.list-group-flush .list-group-item:first-child {
-  border-top-width: 0;
+.list-group-flush > .list-group-item {
+  border-width: 0 0 1px;
 }
 
-.list-group-flush:last-child .list-group-item:last-child {
+.list-group-flush > .list-group-item:last-child {
   border-bottom-width: 0;
 }
 
@@ -3847,9 +3868,6 @@ button.close {
   padding: 0;
   background-color: transparent;
   border: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-item-disabled {
@@ -3931,6 +3949,7 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
 .modal-dialog-centered::before {
   display: block;
   height: calc(100vh - 1rem);
+  height: min-content;
   content: "";
 }
 
@@ -4044,6 +4063,7 @@ a.close.disabled, a.close.datepicker-item-disabled, a.close.datepicker-panel-ite
   }
   .modal-dialog-centered::before {
     height: calc(100vh - 3.5rem);
+    height: min-content;
   }
   .modal-sm {
     max-width: 300px;
@@ -4604,8 +4624,7 @@ a.text-light-border-color:hover, a.text-light-border-color:focus {
 }
 
 .text-break {
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
 }
 
 .text-reset {
@@ -4874,8 +4893,7 @@ a.text-light-border-color:hover, a.text-light-border-color:focus {
   background-size: cover;
 }
 
-.fc-day-grid-event {
-  padding-top: 1px;
+.fc-daygrid-event {
   cursor: default;
 }
 
@@ -4948,6 +4966,10 @@ label {
   align-items: center;
   min-height: 100%;
   min-height: 100vh;
+}
+
+.repeating-section-row > div {
+  width: 100%;
 }
 
 .repeating-row > div {
