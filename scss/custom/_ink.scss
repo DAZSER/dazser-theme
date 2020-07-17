@@ -1,0 +1,244 @@
+
+/* ink
+.ink {
+  border: 1px solid $lineColor;
+  border-radius: 2px;
+  &Area {
+    background: $backLShadeColor;
+  }
+  &Page {
+    background: #fff;
+    border: 1px solid $lineColor;
+    box-shadow: 0 3px 3px $backShadeColor;
+  }
+  &ZoomBox {
+    border: 1px dotted $accentColor;
+  }
+  &SplitBar {
+    background: $lineColor;
+  }
+}
+
+.inkZoomBoxScale::after {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  display: block;
+  content: "";
+  border: 5px solid transparent;
+  border-right-color: transparentize($accentColor, .5);
+  border-bottom-color: transparentize($accentColor, .5);
+}
+
+.inkEraser {
+  background: rgba(255, 100, 150, .1);
+  border: 1px solid rgba(255, 100, 150, .5);
+  border-radius: 2px;
+}
+.inkButton {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  line-height: $size - 2px;
+  color: $iconColor;
+  text-align: center;
+  vertical-align: top;
+  background: $backTransColor;
+  border: 1px solid $lineColor;
+  border-radius: $size / 2;
+}
+.inkButton .icon {
+  fill: $foreLightColor;
+  stroke: $foreLightColor;
+}
+.inkButtonSelected {
+  color: $iconColor;
+}
+.inkButtonSelected .icon {
+  fill: $iconColor;
+  stroke: $iconColor;
+}
+.inkBarTop {
+  background: $backTransColor;
+  border-bottom: 1px solid $lineColor;
+}
+.inkBarLeft {
+  background: $backTransColor;
+  border-right: 1px solid $lineColor;
+}
+.inkBarRight {
+  background: $backTransColor;
+  border-left: 1px solid $lineColor;
+}
+.inkBarBottom {
+  background: $backTransColor;
+  border-top: 1px solid $lineColor;
+}
+.inkGroupTop,
+.inkGroupBottom,
+.inkGroupLeft,
+.inkGroupRight {
+  background: $backTransColor;
+  border: 1px solid $lineColor;
+}
+.inkGroupTop {
+  border-top-style: none;
+  border-radius: 0 0 2px 2px;
+}
+.inkGroupBottom {
+  border-bottom-style: none;
+  border-radius: 2px 2px 0 0;
+}
+.inkGroupLeft {
+  border-left-style: none;
+  border-radius: 0 2px 2px 0;
+}
+.inkGroupRight {
+  border-right-style: none;
+  border-radius: 2px 0 0 2px;
+}
+.inkBarTop,
+.inkBarBottom,
+.inkBarLeft,
+.inkBarRight,
+.inkGroupTop,
+.inkGroupBottom,
+.inkGroupLeft,
+.inkGroupRight {
+  .inkButton {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+  }
+  .inkButtonSelected {
+    background: $backLShadeColor;
+  }
+}
+
+.inkStatus {
+  padding: 4px;
+  color: $backColor;
+  background: rgba($foreColor, .25);
+  border-radius: 2px;
+}
+.inkPopup {
+  background: $backColor;
+  border: 1px solid $lineColor;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+.inkPopupLock {
+  background: rgba(0, 0, 0, .1);
+}
+.inkPopupGroup {
+  padding: 4px;
+  padding-bottom: 0;
+  border-bottom: 1px solid $lineLightColor;
+}
+.inkPopupSwatch {
+  position: relative;
+  display: inline-block;
+  width: $size;
+  height: $size;
+  margin-bottom: 4px;
+  line-height: $size - 2px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid $lineColor;
+  border-radius: $size / 2;
+}
+.inkPopupSwatchSelected {
+  margin: -1px;
+  margin-bottom: 3px;
+  border: 2px solid $accentColor;
+  border-radius: 23px;
+}
+.inkPopupSwatchSelected::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+.inkPopupButton {
+  padding: $iconPad $fontPad;
+  font-size: $fontSize;
+  font-weight: 700;
+  line-height: $iconSize;
+  color: $altAccentColor;
+  text-align: center;
+  cursor: default;
+}
+.inkPopupButton:hover {
+  color: $altAccentForeColor;
+  background: $altAccentColor;
+}
+*/
+
+.signature-pad {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  font-size: 10px;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .27), 0 0 40px rgba(0, 0, 0, .08) inset;
+
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 10px;
+    z-index: -1;
+    width: 40%;
+    height: 10px;
+    content: "";
+    background: transparent;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, .4);
+  }
+  &::before {
+    left: 20px;
+    transform: skew(-3deg) rotate(-3deg);
+  }
+  &::after {
+    right: 20px;
+    transform: skew(3deg) rotate(3deg);
+  }
+
+  &--body {
+    position: relative;
+    flex: 1;
+    border: 1px solid #f4f4f4;
+    & canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, .02) inset;
+    }
+
+  }
+  &--footer {
+    margin-top: 8px;
+    font-size: 1.2em;
+
+    color: #c3c3c3;
+    text-align: center;
+    border: 1px solid #fa0;
+
+  }
+  &--actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+}
+
