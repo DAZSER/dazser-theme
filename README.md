@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/DAZSERMgmt/dazser-theme.svg?branch=master)](https://travis-ci.org/DAZSERMgmt/dazser-theme)
+![Node.js CI](https://github.com/Sparticuz/dazser-theme/workflows/Node.js%20CI/badge.svg)
 
 # DAZSER Theme
 
